@@ -1,0 +1,87 @@
+.button-green {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px 15px, 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+}
+
+.button-blue {
+  background-color: #008CBA; /* Blue */
+  border: none;
+  color: white;
+  padding: 10px 20px 10px, 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+}
+
+.button-red {
+  background-color: #f44336; /* Red */
+  border: none;
+  color: white;
+  padding: 15px 32px 15px, 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+}
+
+.button-gray {
+  background-color: #e7e7e7; /*  Gray */
+  border: none;
+  color: black;
+  padding: 15px 32px 15px, 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+}
+
+.button-black {
+  background-color: #555555; /*  Black*/
+  border: none;
+  color: white;
+  padding: 15px 32px 15px, 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+}
+
+.button-orange {
+  background-color: orange;
+  border: none;
+  color: black;
+  padding: 15px 32px 15px, 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+}
+
+.button-pink {
+  background-color: #ff3399;
+  border: none;
+  color: white;
+  padding: 15px 32px 15px, 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+}
+
+.button-purple {
+  background-color: purple;
+  border: none;
+  color: white;
+  padding: 15px 32px 15px, 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+}

@@ -85,3 +85,18 @@
   display: inline-block;
   font-size: 15px;
 }
+
+.button-brown {
+  background-color: brown;
+  border: none;
+  color: white;
+  padding: 15px 32px 15px, 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+}
+
+.form-inline {
+  display: inline-block;
+}

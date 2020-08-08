@@ -1,3 +1,11 @@
+.button-turquoise {
+  background-color: #40E0D0;
+}
+
+.button-peach {
+  background-color: #ffcba4;
+}
+
 .button-green {
   background-color: #4CAF50;
 }
@@ -8,10 +16,6 @@
 
 .button-red {
   background-color: #f44336;
-}
-
-.button-gray {
-  background-color: #e7e7e7;
 }
 
 .button-black {
@@ -34,16 +38,8 @@
   background-color: brown;
 }
 
-.color-white {
-  color: white;
-}
-
-.color-black {
-  color: black;
-}
-
 a.button-skill:visited {
-	color: white; /** white or black **/
+	color: white;
 }
 
 a.button-skill:hover, a.button-skill:focus, a.button-skill:active { /** white or black **/
@@ -54,6 +50,7 @@ a.button-skill:hover, a.button-skill:focus, a.button-skill:active { /** white or
 .button-skill {
   width: 250px;
   border: none;
+  color: white;
   line-height: 4.8rem;
   margin-bottom: 10px;
   text-align: center;

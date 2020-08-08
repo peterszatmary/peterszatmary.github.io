@@ -1,102 +1,85 @@
 .button-green {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px 15px, 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
+  background-color: #4CAF50;
 }
 
 .button-blue {
-  background-color: #008CBA; /* Blue */
-  border: none;
-  color: white;
-  padding: 10px 20px 10px, 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
+  background-color: #008CBA;
 }
 
 .button-red {
-  background-color: #f44336; /* Red */
-  border: none;
-  color: white;
-  padding: 15px 32px 15px, 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
+  background-color: #f44336;
 }
 
 .button-gray {
-  background-color: #e7e7e7; /*  Gray */
-  border: none;
-  color: black;
-  padding: 15px 32px 15px, 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
+  background-color: #e7e7e7;
 }
 
 .button-black {
-  background-color: #555555; /*  Black*/
-  border: none;
-  color: white;
-  padding: 15px 32px 15px, 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
+  background-color: #555555;
 }
 
 .button-orange {
   background-color: orange;
-  border: none;
-  color: black;
-  padding: 15px 32px 15px, 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
 }
 
 .button-pink {
   background-color: #ff3399;
-  border: none;
-  color: white;
-  padding: 15px 32px 15px, 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
 }
 
 .button-purple {
   background-color: purple;
-  border: none;
-  color: white;
-  padding: 15px 32px 15px, 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
 }
 
 .button-brown {
   background-color: brown;
-  border: none;
+}
+
+.color-white {
   color: white;
-  padding: 15px 32px 15px, 32px;
+}
+
+.color-black {
+  color: black;
+}
+
+a.button-skill:visited {
+	color: white; /** white or black **/
+}
+
+a.button-skill:hover, a.button-skill:focus, a.button-skill:active { /** white or black **/
+	color: white;
+	outline: 0;
+}
+
+.button-skill {
+  width: 250px;
+  border: none;
+  line-height: 4.8rem;
+  margin-bottom: 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 15px;
+  font-weight: bold;
+  font-family: "poppins-bold", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .3rem;
 }
 
-.form-inline {
-  display: inline-block;
+@media only screen and (max-width:768px) {
+    .button-skill {
+		width: 100%;
+		border: none;
+        line-height: 4.8rem;
+        margin-bottom: 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: "poppins-bold", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: .3rem;
+	}
 }
+

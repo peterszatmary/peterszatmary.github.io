@@ -2026,22 +2026,44 @@ header .logo a {
  *
  * ------------------------------------------------------------------- 
  */
-#cta {
+#top-skills {
 	padding-top: 10.2rem;
 	padding-bottom: 9rem;
 	text-align: center;
 }
-#cta p.lead {
+#top-skills p.lead {
 	color: #6e6e6e;
 }
-.cta-content {
+.top-skills-content {
 	max-width: 640px;
 }
-.cta-thumb {
+.top-skills-thumb {
 	display: inline-block;
 	margin-bottom: 1.2rem;
 }
-.cta-thumb img {
+.top-skills-thumb img {
+	height: 7.8rem;
+	width: 7.8rem;
+	border-radius: 50%;
+}
+
+
+#other-skills {
+	padding-top: 10.2rem;
+	padding-bottom: 9rem;
+	text-align: center;
+}
+#other-skills p.lead {
+	color: #6e6e6e;
+}
+.other-skills-content {
+	max-width: 640px;
+}
+.other-skills-thumb {
+	display: inline-block;
+	margin-bottom: 1.2rem;
+}
+.other-skills-thumb img {
 	height: 7.8rem;
 	width: 7.8rem;
 	border-radius: 50%;

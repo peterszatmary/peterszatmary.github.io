@@ -80,3 +80,10 @@ a.button-skill:hover, a.button-skill:focus, a.button-skill:active { /** white or
 	}
 }
 
+.white-section {
+	background: white;
+}
+.white-section p.lead {
+	color: black;
+}
+

@@ -3,7 +3,17 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Ultimate Batch QR Generator</title>
+
+        <title>Free Bulk QR Code Generator & Custom Creator</title>
+        <meta
+            name="description"
+            content="Generate custom QR codes with logos and colors. Use our bulk QR code generator to create multiple QR codes from URLs instantly and download them as a ZIP file."
+        />
+        <meta
+            name="keywords"
+            content="bulk qr code generator, batch qr generator, custom qr code with logo, qr code colors, free qr generator, wifi qr code, download multiple qr codes zip"
+        />
+        <meta name="author" content="Peter Szatmary" />
 
         <script
             type="text/javascript"
@@ -24,6 +34,7 @@
                 --surface: #ffffff;
                 --text: #1f2937;
                 --danger: #ef4444;
+                --success: #10b981;
             }
 
             body {
@@ -31,13 +42,14 @@
                 background-color: var(--bg);
                 color: var(--text);
                 display: flex;
-                justify-content: center;
+                flex-direction: column;
                 align-items: center;
                 min-height: 100vh;
                 margin: 0;
-                padding: 20px;
+                padding: 40px 20px;
             }
 
+            /* --- MAIN APP CONTAINER --- */
             .container {
                 background: var(--surface);
                 border-radius: 20px;
@@ -45,6 +57,39 @@
                 width: 100%;
                 max-width: 500px;
                 overflow: hidden;
+                margin-bottom: 40px;
+            }
+
+            /* --- SEO CONTENT BOX --- */
+            .seo-section {
+                width: 100%;
+                max-width: 600px;
+                background: transparent;
+                color: #4b5563;
+                line-height: 1.6;
+            }
+            .seo-section h2 {
+                color: #1f2937;
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+                text-align: center;
+            }
+            .seo-feature {
+                background: white;
+                padding: 20px;
+                border-radius: 12px;
+                margin-bottom: 15px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            }
+            .seo-feature h3 {
+                margin-top: 0;
+                color: var(--primary);
+                font-size: 1.1rem;
+                margin-bottom: 8px;
+            }
+            .seo-feature p {
+                margin: 0;
+                font-size: 0.95rem;
             }
 
             /* --- TABS --- */
@@ -79,7 +124,6 @@
             .content-area {
                 padding: 1.5rem;
             }
-
             .tab-content {
                 display: none;
                 animation: fadeIn 0.3s ease;
@@ -104,7 +148,7 @@
                 margin-bottom: 1rem;
                 text-align: left;
             }
-            label {
+            label.input-label {
                 display: block;
                 margin-bottom: 0.4rem;
                 font-size: 0.8rem;
@@ -126,13 +170,14 @@
                 font-family: inherit;
                 font-size: 14px;
                 outline: none;
+                transition: border-color 0.2s;
             }
             input:focus,
-            textarea:focus {
+            textarea:focus,
+            select:focus {
                 border-color: var(--primary);
             }
 
-            /* Color inputs */
             input[type="color"] {
                 width: 100%;
                 height: 40px;
@@ -148,6 +193,34 @@
             }
             .col {
                 flex: 1;
+            }
+
+            /* --- MODERN FILE UPLOAD --- */
+            .file-upload-wrapper {
+                position: relative;
+                width: 100%;
+            }
+            .file-upload-wrapper input[type="file"] {
+                display: none;
+            }
+            .file-upload-label {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 15px;
+                background-color: #f8fafc;
+                border: 2px dashed #cbd5e1;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: all 0.2s;
+                color: #64748b;
+                font-weight: 500;
+                font-size: 14px;
+            }
+            .file-upload-label:hover {
+                border-color: var(--primary);
+                color: var(--primary);
+                background-color: #eff6ff;
             }
 
             /* --- BULK URL LIST --- */
@@ -204,18 +277,13 @@
                 margin-top: 15px;
                 transition: 0.2s;
             }
-            .btn-primary {
-                background-color: var(--primary);
-                color: white;
-            }
-            .btn-primary:hover {
-                background-color: #4338ca;
-            }
             .btn-success {
-                background-color: #10b981;
+                background-color: var(--success);
                 color: white;
             }
-
+            .btn-success:hover {
+                background-color: #059669;
+            }
             .btn:disabled {
                 background-color: #cbd5e1;
                 cursor: not-allowed;
@@ -241,6 +309,11 @@
                 font-weight: 500;
                 margin-top: 20px;
                 font-size: 13px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                transition: transform 0.2s;
+            }
+            .bmc-button:hover {
+                transform: translateY(-2px);
             }
             .bmc-button img {
                 height: 18px;
@@ -291,23 +364,25 @@
             <div class="content-area">
                 <div id="tab-single" class="tab-content active">
                     <div class="input-group">
-                        <label>Website URL</label>
+                        <label class="input-label">Website URL</label>
                         <input
                             type="text"
                             id="inp-url"
                             value="https://brainifybook.com"
+                            oninput="liveUpdate()"
                         />
                     </div>
                 </div>
 
                 <div id="tab-multi" class="tab-content">
                     <div class="input-group">
-                        <label>Add URL to List</label>
+                        <label class="input-label">Add URL to List</label>
                         <div class="add-row">
                             <input
                                 type="text"
                                 id="inp-multi-add"
                                 placeholder="https://example.com/page1"
+                                onkeypress="handleEnter(event)"
                             />
                             <button class="btn-add" onclick="addUrlToList()">
                                 Add
@@ -315,7 +390,7 @@
                         </div>
                     </div>
                     <div class="input-group">
-                        <label
+                        <label class="input-label"
                             >URL List (<span id="count-display">0</span>)</label
                         >
                         <div id="url-list-container">
@@ -335,16 +410,24 @@
 
                 <div id="tab-wifi" class="tab-content">
                     <div class="input-group">
-                        <label>Network Name (SSID)</label>
-                        <input type="text" id="inp-wifi-ssid" />
+                        <label class="input-label">Network Name (SSID)</label>
+                        <input
+                            type="text"
+                            id="inp-wifi-ssid"
+                            oninput="liveUpdate()"
+                        />
                     </div>
                     <div class="input-group">
-                        <label>Password</label>
-                        <input type="password" id="inp-wifi-pass" />
+                        <label class="input-label">Password</label>
+                        <input
+                            type="password"
+                            id="inp-wifi-pass"
+                            oninput="liveUpdate()"
+                        />
                     </div>
                     <div class="input-group">
-                        <label>Security</label>
-                        <select id="inp-wifi-type">
+                        <label class="input-label">Security</label>
+                        <select id="inp-wifi-type" onchange="liveUpdate()">
                             <option value="WPA">WPA/WPA2</option>
                             <option value="WEP">WEP</option>
                             <option value="nopass">None</option>
@@ -354,23 +437,37 @@
 
                 <div id="tab-text" class="tab-content">
                     <div class="input-group">
-                        <label>Text</label>
-                        <textarea id="inp-text"></textarea>
+                        <label class="input-label">Text</label>
+                        <textarea
+                            id="inp-text"
+                            oninput="liveUpdate()"
+                        ></textarea>
                     </div>
                 </div>
 
                 <div id="tab-email" class="tab-content">
                     <div class="input-group">
-                        <label>Email To</label>
-                        <input type="email" id="inp-email-to" />
+                        <label class="input-label">Email To</label>
+                        <input
+                            type="email"
+                            id="inp-email-to"
+                            oninput="liveUpdate()"
+                        />
                     </div>
                     <div class="input-group">
-                        <label>Subject</label>
-                        <input type="text" id="inp-email-sub" />
+                        <label class="input-label">Subject</label>
+                        <input
+                            type="text"
+                            id="inp-email-sub"
+                            oninput="liveUpdate()"
+                        />
                     </div>
                     <div class="input-group">
-                        <label>Message</label>
-                        <textarea id="inp-email-body"></textarea>
+                        <label class="input-label">Message</label>
+                        <textarea
+                            id="inp-email-body"
+                            oninput="liveUpdate()"
+                        ></textarea>
                     </div>
                 </div>
 
@@ -383,7 +480,7 @@
                     "
                 >
                     <div class="col">
-                        <label>Code Color</label>
+                        <label class="input-label">Code Color</label>
                         <input
                             type="color"
                             id="color-dots"
@@ -392,7 +489,7 @@
                         />
                     </div>
                     <div class="col">
-                        <label>Background</label>
+                        <label class="input-label">Background</label>
                         <input
                             type="color"
                             id="color-bg"
@@ -403,22 +500,22 @@
                 </div>
 
                 <div class="input-group">
-                    <label>Center Logo (Optional)</label>
-                    <input
-                        type="file"
-                        id="logo-input"
-                        accept="image/*"
-                        onchange="liveUpdate()"
-                    />
+                    <label class="input-label">Center Logo (Optional)</label>
+                    <div class="file-upload-wrapper">
+                        <input
+                            type="file"
+                            id="logo-input"
+                            accept="image/*"
+                            onchange="updateFileName(this); liveUpdate()"
+                        />
+                        <label for="logo-input" class="file-upload-label">
+                            <span id="file-name"
+                                >📁 Choose a logo image...</span
+                            >
+                        </label>
+                    </div>
                 </div>
 
-                <button
-                    class="btn btn-primary"
-                    id="btn-gen-single"
-                    onclick="generateSingleQR()"
-                >
-                    Generate QR Code
-                </button>
                 <button
                     class="btn btn-success"
                     id="btn-gen-zip"
@@ -432,10 +529,9 @@
                 <button
                     class="btn btn-success"
                     id="dl-btn-single"
-                    style="display: none"
                     onclick="downloadSingleQR()"
                 >
-                    Download Image
+                    Generate & Download
                 </button>
 
                 <a
@@ -452,11 +548,50 @@
             </div>
         </div>
 
+        <div class="seo-section">
+            <h2>About This QR Code Generator</h2>
+
+            <div class="seo-feature">
+                <h3>🎨 Custom Single QR Codes</h3>
+                <p>
+                    Easily generate modern, professional-looking QR codes for
+                    your websites. You can completely personalize the look by
+                    changing the dot color and background color to match your
+                    brand. Want to stand out? Upload your own custom logo or
+                    icon to perfectly center it within the code.
+                </p>
+            </div>
+
+            <div class="seo-feature">
+                <h3>⚡ Bulk Generation (Save Time!)</h3>
+                <p>
+                    Running a marketing campaign or need codes for multiple
+                    products? Our Bulk URL feature is exactly what you need.
+                    Paste multiple links into our list, apply your colors and
+                    logo once, and click generate. Our tool will securely
+                    package all your high-quality PNG QR codes into a single ZIP
+                    file downloaded right to your computer. Smart naming ensures
+                    your files are neatly organized by domain.
+                </p>
+            </div>
+
+            <div class="seo-feature">
+                <h3>🔧 Multi-Format Support</h3>
+                <p>
+                    QR codes aren't just for web links. Use our tool to create
+                    easy Wi-Fi login codes (guests scan and connect instantly
+                    without typing passwords), pre-filled Email templates, or
+                    hidden text messages. All generated locally in your browser
+                    for maximum privacy.
+                </p>
+            </div>
+        </div>
+
         <script>
             let currentTab = "single";
             let bulkUrls = [];
 
-            // Initialize QR
+            // Initialize QR (300x300 is just for the UI preview)
             const qrCode = new QRCodeStyling({
                 width: 300,
                 height: 300,
@@ -466,10 +601,10 @@
                 backgroundOptions: { color: "#ffffff" },
                 imageOptions: { crossOrigin: "anonymous", margin: 10 },
                 cornersSquareOptions: {
-                    type: "extra-rounded",
                     color: "#000000",
+                    type: "extra-rounded",
                 },
-                cornersDotOptions: { type: "dot", color: "#000000" },
+                cornersDotOptions: { color: "#000000", type: "dot" },
             });
 
             qrCode.append(document.getElementById("canvas"));
@@ -491,27 +626,36 @@
                     .getElementById("tab-" + tabName)
                     .classList.add("active");
 
-                const singleBtn = document.getElementById("btn-gen-single");
                 const zipBtn = document.getElementById("btn-gen-zip");
                 const dlSingleBtn = document.getElementById("dl-btn-single");
                 const canvasDiv = document.getElementById("canvas");
 
                 if (tabName === "multi") {
-                    singleBtn.style.display = "none";
                     zipBtn.style.display = "block";
                     dlSingleBtn.style.display = "none";
                     canvasDiv.style.display = "none";
                 } else {
-                    singleBtn.style.display = "block";
                     zipBtn.style.display = "none";
                     canvasDiv.style.display = "flex";
-                    dlSingleBtn.style.display = "none";
-                    // Trigger update to show correct preview
+                    dlSingleBtn.style.display = "block";
                     generateSingleQR();
                 }
             }
 
-            // --- LIVE UPDATE (When changing colors/logo) ---
+            // --- FILE INPUT UI LOGIC ---
+            function updateFileName(input) {
+                const fileNameSpan = document.getElementById("file-name");
+                if (input.files && input.files.length > 0) {
+                    fileNameSpan.textContent = "✅ " + input.files[0].name;
+                    fileNameSpan.style.color = "var(--success)";
+                    fileNameSpan.style.fontWeight = "bold";
+                } else {
+                    fileNameSpan.textContent = "📁 Choose a logo image...";
+                    fileNameSpan.style.color = "";
+                    fileNameSpan.style.fontWeight = "500";
+                }
+            }
+
             function liveUpdate() {
                 if (currentTab !== "multi") {
                     generateSingleQR();
@@ -519,10 +663,16 @@
             }
 
             // --- BULK URL LOGIC ---
+            function handleEnter(e) {
+                if (e.key === "Enter") {
+                    e.preventDefault();
+                    addUrlToList();
+                }
+            }
+
             function addUrlToList() {
                 const input = document.getElementById("inp-multi-add");
                 const url = input.value.trim();
-
                 if (url) {
                     bulkUrls.push(url);
                     input.value = "";
@@ -557,14 +707,18 @@
                 countSpan.innerText = bulkUrls.length;
             }
 
+            // --- SMART NAMING LOGIC ---
             function getSafeFilename(url, index) {
                 try {
-                    const urlObj = new URL(
-                        url.startsWith("http") ? url : `https://${url}`,
-                    );
-                    let hostname = urlObj.hostname;
-                    let safeName = hostname.replace(/\./g, "");
+                    let safeName = url.replace(/^https?:\/\//, "");
+                    safeName = safeName.replace(/[^a-zA-Z0-9.-]/g, "_");
+                    safeName = safeName
+                        .replace(/_+/g, "_")
+                        .replace(/^_|_$/g, "");
                     if (!safeName) return `qrcode_${index}`;
+                    if (safeName.length > 50) {
+                        safeName = safeName.substring(0, 50).replace(/_$/, "");
+                    }
                     return safeName;
                 } catch (e) {
                     return `qrcode_${index}`;
@@ -572,7 +726,6 @@
             }
 
             // --- CORE GENERATION LOGIC ---
-
             async function getLogoData() {
                 const fileInput = document.getElementById("logo-input");
                 if (fileInput.files.length > 0) {
@@ -594,14 +747,16 @@
                     const ssid = document.getElementById("inp-wifi-ssid").value;
                     const pass = document.getElementById("inp-wifi-pass").value;
                     const type = document.getElementById("inp-wifi-type").value;
-                    if (!ssid && currentTab === "wifi") return; // Don't alert on live update if empty
+                    if (!ssid && currentTab === "wifi") return;
                     finalData = `WIFI:S:${ssid};T:${type};P:${pass};;`;
                 } else if (currentTab === "text")
                     finalData = document.getElementById("inp-text").value;
                 else if (currentTab === "email") {
                     const to = document.getElementById("inp-email-to").value;
-                    // Simplified for live preview
-                    finalData = `mailto:${to}`;
+                    const sub = document.getElementById("inp-email-sub").value;
+                    const body =
+                        document.getElementById("inp-email-body").value;
+                    finalData = `mailto:${to}?subject=${encodeURIComponent(sub)}&body=${encodeURIComponent(body)}`;
                 }
 
                 if (!finalData) return;
@@ -621,16 +776,28 @@
                     },
                     cornersDotOptions: { color: colorDots, type: "dot" },
                 });
-
-                document.getElementById("dl-btn-single").style.display =
-                    "block";
             }
 
-            function downloadSingleQR() {
+            // DOWNLOAD SINGLE WITH HIGH RESOLUTION
+            async function downloadSingleQR() {
+                await generateSingleQR(); // Ensure latest data
+
+                // 1. Temporarily scale up for high quality download (1024x1024)
+                qrCode.update({ width: 1024, height: 1024 });
+
+                // Wait a tiny bit for the library to draw the large image
+                await new Promise((r) => setTimeout(r, 100));
+
+                // 2. Download
                 qrCode.download({ name: "qr-code", extension: "png" });
+
+                // 3. Revert back to UI preview size
+                setTimeout(() => {
+                    qrCode.update({ width: 300, height: 300 });
+                }, 500);
             }
 
-            // BATCH ZIP GENERATION
+            // BATCH ZIP GENERATION WITH HIGH RESOLUTION
             async function generateZipBatch() {
                 if (bulkUrls.length === 0) return alert("Add some URLs first!");
 
@@ -645,14 +812,15 @@
                     const folder = zip.folder("qr-codes");
                     const nameTracker = {};
 
-                    // Get current colors
                     const colorDots =
                         document.getElementById("color-dots").value;
                     const colorBg = document.getElementById("color-bg").value;
 
                     for (let i = 0; i < bulkUrls.length; i++) {
-                        // Apply colors and data to instance
+                        // Set high resolution explicitly here (1024x1024)
                         qrCode.update({
+                            width: 1024,
+                            height: 1024,
                             data: bulkUrls[i],
                             image: logoData || "",
                             dotsOptions: { color: colorDots, type: "dots" },
@@ -677,7 +845,7 @@
                             nameTracker[baseName] = 1;
                         }
 
-                        await new Promise((r) => setTimeout(r, 50));
+                        await new Promise((r) => setTimeout(r, 100)); // wait for drawing
                         const blob = await qrCode.getRawData("png");
 
                         if (blob) {
@@ -685,8 +853,15 @@
                         }
                     }
 
-                    const content = await zip.generateAsync({ type: "blob" });
+                    // Generate ZIP with NO COMPRESSION (STORE mode) as requested
+                    const content = await zip.generateAsync({
+                        type: "blob",
+                        compression: "STORE",
+                    });
                     saveAs(content, "qr-codes-batch.zip");
+
+                    // Revert back to preview size
+                    qrCode.update({ width: 300, height: 300 });
                 } catch (err) {
                     console.error(err);
                     alert("Error generating ZIP");

@@ -1,72 +1,75 @@
 .button-turquoise {
-  background-color: #40E0D0;
+    background-color: #40e0d0;
 }
 
 .button-peach {
-  background-color: #ffcba4;
+    background-color: #ffcba4;
 }
 
 .button-green {
-  background-color: #4CAF50;
+    background-color: #4caf50;
 }
 
 .button-blue {
-  background-color: #008CBA;
+    background-color: #008cba;
 }
 
 .button-red {
-  background-color: #f44336;
+    background-color: #f44336;
 }
 
 .button-black {
-  background-color: #555555;
+    background-color: #555555;
 }
 
 .button-orange {
-  background-color: orange;
+    background-color: orange;
 }
 
 .button-pink {
-  background-color: #ff3399;
+    background-color: #ff3399;
 }
 
 .button-purple {
-  background-color: purple;
+    background-color: purple;
 }
 
 .button-brown {
-  background-color: brown;
+    background-color: brown;
 }
 
 a.button-skill:visited {
-	color: white;
+    color: white;
 }
 
-a.button-skill:hover, a.button-skill:focus, a.button-skill:active { /** white or black **/
-	color: white;
-	outline: 0;
+a.button-skill:hover,
+a.button-skill:focus,
+a.button-skill:active {
+    /** white or black **/
+    color: white;
+    outline: 0;
 }
 
 .button-skill {
-  width: 250px;
-  border: none;
-  color: white;
-  line-height: 4.8rem;
-  margin-bottom: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
-  font-weight: bold;
-  font-family: "poppins-bold", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: .3rem;
+    width: 250px;
+    border: none;
+    color: white;
+    line-height: 4.8rem;
+    margin-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: "poppins-bold", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
     .button-skill {
-		width: 100%;
-		border: none;
+        width: 100%;
+        border: none;
         line-height: 4.8rem;
         margin-bottom: 10px;
         text-align: center;
@@ -76,14 +79,78 @@ a.button-skill:hover, a.button-skill:focus, a.button-skill:active { /** white or
         font-weight: bold;
         font-family: "poppins-bold", sans-serif;
         text-transform: uppercase;
-        letter-spacing: .3rem;
-	}
+        letter-spacing: 0.3rem;
+    }
 }
 
 .white-section {
-	background: white;
+    background: white;
 }
 .white-section p.lead {
-	color: black;
+    color: black;
 }
 
+/* Mriežka pre karty - na mobile 1 stĺpec, na väčších obrazovkách 2 alebo 3 */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* Samotná karta s jemným tieňom */
+.skill-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eaeaea;
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.skill-card h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #333;
+    border-bottom: 2px solid #31b573; /* Tvoja akcentová farba */
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+/* Kontajner pre tagy */
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Moderný "Chip" */
+.skill-chip {
+    background: #f4f5f7;
+    color: #555;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    display: inline-block;
+    border: 1px solid #e1e1e1;
+    transition: all 0.2s;
+}
+
+/* Špeciálny štýl pre klikateľné tagy */
+a.skill-chip.linked {
+    color: #31b573;
+    text-decoration: none;
+}
+
+a.skill-chip.linked:hover {
+    background: #31b573;
+    color: #fff;
+    border-color: #31b573;
+}

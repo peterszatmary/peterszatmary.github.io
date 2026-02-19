@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ultimate Batch QR Generator</title>
+
+        <script
+            type="text/javascript"
+            src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"
+        ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <style>
+            :root {
+                --primary: #4f46e5;
+                --bg: #f3f4f6;
+                --surface: #ffffff;
+                --text: #1f2937;
+                --danger: #ef4444;
+            }
+
+            body {
+                font-family: "Roboto", sans-serif;
+                background-color: var(--bg);
+                color: var(--text);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                margin: 0;
+                padding: 20px;
+            }
+
+            .container {
+                background: var(--surface);
+                border-radius: 20px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+                width: 100%;
+                max-width: 500px;
+                overflow: hidden;
+            }
+
+            /* --- TABS --- */
+            .tabs {
+                display: flex;
+                flex-wrap: wrap;
+                background-color: #f8fafc;
+                padding: 5px;
+                border-bottom: 1px solid #e2e8f0;
+            }
+
+            .tab-btn {
+                flex: 1;
+                padding: 12px 5px;
+                border: none;
+                background: transparent;
+                cursor: pointer;
+                font-weight: 500;
+                font-size: 13px;
+                color: #64748b;
+                border-radius: 8px;
+                transition: all 0.2s;
+            }
+
+            .tab-btn.active {
+                background-color: white;
+                color: var(--primary);
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+                font-weight: 700;
+            }
+
+            .content-area {
+                padding: 1.5rem;
+            }
+
+            .tab-content {
+                display: none;
+                animation: fadeIn 0.3s ease;
+            }
+            .tab-content.active {
+                display: block;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(5px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* --- FORMS --- */
+            .input-group {
+                margin-bottom: 1rem;
+                text-align: left;
+            }
+            label {
+                display: block;
+                margin-bottom: 0.4rem;
+                font-size: 0.8rem;
+                font-weight: 700;
+                color: #4b5563;
+                text-transform: uppercase;
+            }
+
+            input[type="text"],
+            input[type="password"],
+            input[type="email"],
+            textarea,
+            select {
+                width: 100%;
+                padding: 10px;
+                border: 2px solid #e5e7eb;
+                border-radius: 8px;
+                box-sizing: border-box;
+                font-family: inherit;
+                font-size: 14px;
+                outline: none;
+            }
+            input:focus,
+            textarea:focus {
+                border-color: var(--primary);
+            }
+
+            /* Color inputs */
+            input[type="color"] {
+                width: 100%;
+                height: 40px;
+                padding: 0;
+                border: none;
+                background: none;
+                cursor: pointer;
+                border-radius: 8px;
+            }
+            .row {
+                display: flex;
+                gap: 15px;
+            }
+            .col {
+                flex: 1;
+            }
+
+            /* --- BULK URL LIST --- */
+            .add-row {
+                display: flex;
+                gap: 10px;
+            }
+            .btn-add {
+                background-color: var(--primary);
+                color: white;
+                border: none;
+                border-radius: 8px;
+                padding: 0 20px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+            #url-list-container {
+                margin-top: 15px;
+                max-height: 150px;
+                overflow-y: auto;
+                border: 1px solid #e5e7eb;
+                border-radius: 8px;
+                background: #f9fafb;
+            }
+            .url-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 8px 12px;
+                border-bottom: 1px solid #eee;
+                font-size: 13px;
+            }
+            .url-item:last-child {
+                border-bottom: none;
+            }
+            .btn-remove {
+                color: var(--danger);
+                background: none;
+                border: none;
+                cursor: pointer;
+                font-weight: bold;
+                font-size: 16px;
+            }
+
+            /* --- ACTION BUTTONS --- */
+            .btn {
+                width: 100%;
+                padding: 12px;
+                border: none;
+                border-radius: 10px;
+                font-weight: 600;
+                cursor: pointer;
+                margin-top: 15px;
+                transition: 0.2s;
+            }
+            .btn-primary {
+                background-color: var(--primary);
+                color: white;
+            }
+            .btn-primary:hover {
+                background-color: #4338ca;
+            }
+            .btn-success {
+                background-color: #10b981;
+                color: white;
+            }
+
+            .btn:disabled {
+                background-color: #cbd5e1;
+                cursor: not-allowed;
+            }
+
+            /* --- CANVAS --- */
+            #canvas {
+                display: flex;
+                justify-content: center;
+                margin: 20px 0;
+            }
+
+            /* --- DONATE --- */
+            .bmc-button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 8px;
+                background-color: #ffdd00;
+                color: black;
+                text-decoration: none;
+                border-radius: 8px;
+                font-weight: 500;
+                margin-top: 20px;
+                font-size: 13px;
+            }
+            .bmc-button img {
+                height: 18px;
+                margin-right: 8px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="tabs">
+                <button
+                    class="tab-btn active"
+                    id="btn-single"
+                    onclick="switchTab('single')"
+                >
+                    Single URL
+                </button>
+                <button
+                    class="tab-btn"
+                    id="btn-multi"
+                    onclick="switchTab('multi')"
+                >
+                    Bulk URLs
+                </button>
+                <button
+                    class="tab-btn"
+                    id="btn-wifi"
+                    onclick="switchTab('wifi')"
+                >
+                    Wi-Fi
+                </button>
+                <button
+                    class="tab-btn"
+                    id="btn-text"
+                    onclick="switchTab('text')"
+                >
+                    Text
+                </button>
+                <button
+                    class="tab-btn"
+                    id="btn-email"
+                    onclick="switchTab('email')"
+                >
+                    Email
+                </button>
+            </div>
+
+            <div class="content-area">
+                <div id="tab-single" class="tab-content active">
+                    <div class="input-group">
+                        <label>Website URL</label>
+                        <input
+                            type="text"
+                            id="inp-url"
+                            value="https://brainifybook.com"
+                        />
+                    </div>
+                </div>
+
+                <div id="tab-multi" class="tab-content">
+                    <div class="input-group">
+                        <label>Add URL to List</label>
+                        <div class="add-row">
+                            <input
+                                type="text"
+                                id="inp-multi-add"
+                                placeholder="https://example.com/page1"
+                            />
+                            <button class="btn-add" onclick="addUrlToList()">
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label
+                            >URL List (<span id="count-display">0</span>)</label
+                        >
+                        <div id="url-list-container">
+                            <div
+                                style="
+                                    padding: 10px;
+                                    color: #999;
+                                    text-align: center;
+                                "
+                                id="empty-msg"
+                            >
+                                List is empty
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-wifi" class="tab-content">
+                    <div class="input-group">
+                        <label>Network Name (SSID)</label>
+                        <input type="text" id="inp-wifi-ssid" />
+                    </div>
+                    <div class="input-group">
+                        <label>Password</label>
+                        <input type="password" id="inp-wifi-pass" />
+                    </div>
+                    <div class="input-group">
+                        <label>Security</label>
+                        <select id="inp-wifi-type">
+                            <option value="WPA">WPA/WPA2</option>
+                            <option value="WEP">WEP</option>
+                            <option value="nopass">None</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="tab-text" class="tab-content">
+                    <div class="input-group">
+                        <label>Text</label>
+                        <textarea id="inp-text"></textarea>
+                    </div>
+                </div>
+
+                <div id="tab-email" class="tab-content">
+                    <div class="input-group">
+                        <label>Email To</label>
+                        <input type="email" id="inp-email-to" />
+                    </div>
+                    <div class="input-group">
+                        <label>Subject</label>
+                        <input type="text" id="inp-email-sub" />
+                    </div>
+                    <div class="input-group">
+                        <label>Message</label>
+                        <textarea id="inp-email-body"></textarea>
+                    </div>
+                </div>
+
+                <div
+                    class="input-group row"
+                    style="
+                        margin-top: 20px;
+                        border-top: 1px solid #eee;
+                        padding-top: 15px;
+                    "
+                >
+                    <div class="col">
+                        <label>Code Color</label>
+                        <input
+                            type="color"
+                            id="color-dots"
+                            value="#000000"
+                            oninput="liveUpdate()"
+                        />
+                    </div>
+                    <div class="col">
+                        <label>Background</label>
+                        <input
+                            type="color"
+                            id="color-bg"
+                            value="#ffffff"
+                            oninput="liveUpdate()"
+                        />
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Center Logo (Optional)</label>
+                    <input
+                        type="file"
+                        id="logo-input"
+                        accept="image/*"
+                        onchange="liveUpdate()"
+                    />
+                </div>
+
+                <button
+                    class="btn btn-primary"
+                    id="btn-gen-single"
+                    onclick="generateSingleQR()"
+                >
+                    Generate QR Code
+                </button>
+                <button
+                    class="btn btn-success"
+                    id="btn-gen-zip"
+                    style="display: none"
+                    onclick="generateZipBatch()"
+                >
+                    Generate and Download
+                </button>
+
+                <div id="canvas"></div>
+                <button
+                    class="btn btn-success"
+                    id="dl-btn-single"
+                    style="display: none"
+                    onclick="downloadSingleQR()"
+                >
+                    Download Image
+                </button>
+
+                <a
+                    class="bmc-button"
+                    target="_blank"
+                    href="https://buymeacoffee.com/peter.szatmary"
+                >
+                    <img
+                        src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg"
+                        alt="Buy me a coffee"
+                    />
+                    <span>Buy me a coffee</span>
+                </a>
+            </div>
+        </div>
+
+        <script>
+            let currentTab = "single";
+            let bulkUrls = [];
+
+            // Initialize QR
+            const qrCode = new QRCodeStyling({
+                width: 300,
+                height: 300,
+                type: "canvas",
+                data: "https://brainifybook.com",
+                dotsOptions: { color: "#000000", type: "dots" },
+                backgroundOptions: { color: "#ffffff" },
+                imageOptions: { crossOrigin: "anonymous", margin: 10 },
+                cornersSquareOptions: {
+                    type: "extra-rounded",
+                    color: "#000000",
+                },
+                cornersDotOptions: { type: "dot", color: "#000000" },
+            });
+
+            qrCode.append(document.getElementById("canvas"));
+
+            // --- TAB LOGIC ---
+            function switchTab(tabName) {
+                currentTab = tabName;
+
+                document
+                    .querySelectorAll(".tab-btn")
+                    .forEach((btn) => btn.classList.remove("active"));
+                document
+                    .querySelectorAll(".tab-content")
+                    .forEach((content) => content.classList.remove("active"));
+                document
+                    .getElementById("btn-" + tabName)
+                    .classList.add("active");
+                document
+                    .getElementById("tab-" + tabName)
+                    .classList.add("active");
+
+                const singleBtn = document.getElementById("btn-gen-single");
+                const zipBtn = document.getElementById("btn-gen-zip");
+                const dlSingleBtn = document.getElementById("dl-btn-single");
+                const canvasDiv = document.getElementById("canvas");
+
+                if (tabName === "multi") {
+                    singleBtn.style.display = "none";
+                    zipBtn.style.display = "block";
+                    dlSingleBtn.style.display = "none";
+                    canvasDiv.style.display = "none";
+                } else {
+                    singleBtn.style.display = "block";
+                    zipBtn.style.display = "none";
+                    canvasDiv.style.display = "flex";
+                    dlSingleBtn.style.display = "none";
+                    // Trigger update to show correct preview
+                    generateSingleQR();
+                }
+            }
+
+            // --- LIVE UPDATE (When changing colors/logo) ---
+            function liveUpdate() {
+                if (currentTab !== "multi") {
+                    generateSingleQR();
+                }
+            }
+
+            // --- BULK URL LOGIC ---
+            function addUrlToList() {
+                const input = document.getElementById("inp-multi-add");
+                const url = input.value.trim();
+
+                if (url) {
+                    bulkUrls.push(url);
+                    input.value = "";
+                    renderUrlList();
+                }
+            }
+
+            function removeUrl(index) {
+                bulkUrls.splice(index, 1);
+                renderUrlList();
+            }
+
+            function renderUrlList() {
+                const container = document.getElementById("url-list-container");
+                const countSpan = document.getElementById("count-display");
+                container.innerHTML = "";
+
+                if (bulkUrls.length === 0) {
+                    container.innerHTML =
+                        '<div style="padding:10px; color:#999; text-align:center;">List is empty</div>';
+                } else {
+                    bulkUrls.forEach((url, index) => {
+                        const div = document.createElement("div");
+                        div.className = "url-item";
+                        div.innerHTML = `
+                    <span style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:280px;">${url}</span>
+                    <button class="btn-remove" onclick="removeUrl(${index})">&times;</button>
+                `;
+                        container.appendChild(div);
+                    });
+                }
+                countSpan.innerText = bulkUrls.length;
+            }
+
+            function getSafeFilename(url, index) {
+                try {
+                    const urlObj = new URL(
+                        url.startsWith("http") ? url : `https://${url}`,
+                    );
+                    let hostname = urlObj.hostname;
+                    let safeName = hostname.replace(/\./g, "");
+                    if (!safeName) return `qrcode_${index}`;
+                    return safeName;
+                } catch (e) {
+                    return `qrcode_${index}`;
+                }
+            }
+
+            // --- CORE GENERATION LOGIC ---
+
+            async function getLogoData() {
+                const fileInput = document.getElementById("logo-input");
+                if (fileInput.files.length > 0) {
+                    return new Promise((resolve) => {
+                        const reader = new FileReader();
+                        reader.onload = (e) => resolve(e.target.result);
+                        reader.readAsDataURL(fileInput.files[0]);
+                    });
+                }
+                return null;
+            }
+
+            async function generateSingleQR() {
+                let finalData = "";
+
+                if (currentTab === "single")
+                    finalData = document.getElementById("inp-url").value;
+                else if (currentTab === "wifi") {
+                    const ssid = document.getElementById("inp-wifi-ssid").value;
+                    const pass = document.getElementById("inp-wifi-pass").value;
+                    const type = document.getElementById("inp-wifi-type").value;
+                    if (!ssid && currentTab === "wifi") return; // Don't alert on live update if empty
+                    finalData = `WIFI:S:${ssid};T:${type};P:${pass};;`;
+                } else if (currentTab === "text")
+                    finalData = document.getElementById("inp-text").value;
+                else if (currentTab === "email") {
+                    const to = document.getElementById("inp-email-to").value;
+                    // Simplified for live preview
+                    finalData = `mailto:${to}`;
+                }
+
+                if (!finalData) return;
+
+                const logoData = await getLogoData();
+                const colorDots = document.getElementById("color-dots").value;
+                const colorBg = document.getElementById("color-bg").value;
+
+                qrCode.update({
+                    data: finalData,
+                    image: logoData || "",
+                    dotsOptions: { color: colorDots, type: "dots" },
+                    backgroundOptions: { color: colorBg },
+                    cornersSquareOptions: {
+                        color: colorDots,
+                        type: "extra-rounded",
+                    },
+                    cornersDotOptions: { color: colorDots, type: "dot" },
+                });
+
+                document.getElementById("dl-btn-single").style.display =
+                    "block";
+            }
+
+            function downloadSingleQR() {
+                qrCode.download({ name: "qr-code", extension: "png" });
+            }
+
+            // BATCH ZIP GENERATION
+            async function generateZipBatch() {
+                if (bulkUrls.length === 0) return alert("Add some URLs first!");
+
+                const btn = document.getElementById("btn-gen-zip");
+                const originalText = btn.innerText;
+                btn.innerText = "Processing... (Please wait)";
+                btn.disabled = true;
+
+                try {
+                    const zip = new JSZip();
+                    const logoData = await getLogoData();
+                    const folder = zip.folder("qr-codes");
+                    const nameTracker = {};
+
+                    // Get current colors
+                    const colorDots =
+                        document.getElementById("color-dots").value;
+                    const colorBg = document.getElementById("color-bg").value;
+
+                    for (let i = 0; i < bulkUrls.length; i++) {
+                        // Apply colors and data to instance
+                        qrCode.update({
+                            data: bulkUrls[i],
+                            image: logoData || "",
+                            dotsOptions: { color: colorDots, type: "dots" },
+                            backgroundOptions: { color: colorBg },
+                            cornersSquareOptions: {
+                                color: colorDots,
+                                type: "extra-rounded",
+                            },
+                            cornersDotOptions: {
+                                color: colorDots,
+                                type: "dot",
+                            },
+                        });
+
+                        let baseName = getSafeFilename(bulkUrls[i], i + 1);
+                        let fileName = baseName;
+
+                        if (nameTracker[baseName]) {
+                            nameTracker[baseName]++;
+                            fileName = `${baseName}_${nameTracker[baseName]}`;
+                        } else {
+                            nameTracker[baseName] = 1;
+                        }
+
+                        await new Promise((r) => setTimeout(r, 50));
+                        const blob = await qrCode.getRawData("png");
+
+                        if (blob) {
+                            folder.file(`${fileName}.png`, blob);
+                        }
+                    }
+
+                    const content = await zip.generateAsync({ type: "blob" });
+                    saveAs(content, "qr-codes-batch.zip");
+                } catch (err) {
+                    console.error(err);
+                    alert("Error generating ZIP");
+                } finally {
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                }
+            }
+        </script>
+    </body>
+</html>

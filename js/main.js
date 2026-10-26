@@ -70,6 +70,7 @@
    var statSection = $("#stats"),
        stats = $(".stat-count");
 
+   if (statSection.length) {
    statSection.waypoint({
 
    	handler: function(direction) {
@@ -98,6 +99,7 @@
 		offset: "90%"
 	
 	});	
+   }
 
 
 	/*---------------------------------------------------- */

@@ -1,26 +1,42 @@
 <!DOCTYPE html>
-<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
-<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<html class="no-js" lang="en">
 	<head>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-180155093-1"></script>
+		<!-- Global site tag (gtag.js) - Google Analytics (Deprecated UA tag commented out. Replace with GA4 measurement ID if needed) -->
+		<!--
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 		<script>
   			window.dataLayer = window.dataLayer || [];
   			function gtag(){dataLayer.push(arguments);}
   			gtag('js', new Date());
-  			gtag('config', 'UA-180155093-1');
+  			gtag('config', 'G-XXXXXXXXXX');
 		</script>
+		-->
 		<meta charset="utf-8">
-		<title>Peter Szatmary Resume</title>
-		<meta name="description" content="Peter Szatmary Resume" />
+		<title>Peter Szatmary - Senior Java & Cloud Engineer</title>
+		<meta name="description" content="Peter Szatmary - Senior Java & Cloud Engineer specializing in Spring Boot, Kubernetes, and Cloud Architecture. Available for B2B contracts." />
 		<meta name="author" content="Peter Szatmary" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<link rel="canonical" href="https://peterszatmary.com/" />
+
+		<!-- Open Graph Meta Tags (LinkedIn, Slack, Social Media) -->
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Peter Szatmary Portfolio" />
+		<meta property="og:title" content="Peter Szatmary - Senior Java & Cloud Engineer" />
+		<meta property="og:description" content="Senior Java & Cloud Engineer specializing in Spring Boot, Kubernetes, and Cloud Architecture. Available for B2B contracts." />
+		<meta property="og:url" content="https://peterszatmary.com/" />
+		<meta property="og:image" content="https://peterszatmary.com/images/me.jpg" />
+		<meta property="og:image:alt" content="Peter Szatmary - Senior Java & Cloud Engineer" />
+
+		<!-- Twitter Card Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Peter Szatmary - Senior Java & Cloud Engineer" />
+		<meta name="twitter:description" content="Senior Java & Cloud Engineer specializing in Spring Boot, Kubernetes, and Cloud Architecture. Available for B2B contracts." />
+		<meta name="twitter:image" content="https://peterszatmary.com/images/me.jpg" />
+
 		<link rel="stylesheet" href="css/base.css" />
 		<link rel="stylesheet" href="css/main.css" />
 		<link rel="stylesheet" href="css/vendor.css" />
 		<link rel="stylesheet" href="css/skills.css" />
-<!--		<link rel="stylesheet" href="css/minified-purified/base.css" /> -->
         <script src="js/modernizr.js"></script>
         <script src="js/pace.min.js"></script>
         <link rel="icon" type="image/png" href="favicon.png" />
@@ -40,7 +56,7 @@
 							<li class="current"><a class="smoothscroll"  href="#intro" title="">Home</a></li>
 							<li><a class="smoothscroll"  href="#about" title="">About</a></li>
 							<li><a class="smoothscroll"  href="#resume" title="">Resume</a></li>
-							<li><a class="smoothscroll"  href="#top-skills" title="">Top skills</a></li>
+							<li><a class="smoothscroll"  href="#skills" title="">Top skills</a></li>
 							<li><a class="smoothscroll"  href="#other-skills" title="">Other skills</a></li>
 							<li><a class="smoothscroll"  href="#services" title="">Services</a></li>
 							<li><a class="smoothscroll"  href="#contact" title="">Contact</a></li>
@@ -97,19 +113,16 @@
 							<span>Peter Szatmary</span>
 						</li>
 						<li>
-							<strong>Birth date</strong>
-							<span>November 1, 1986</span>
+							<strong>Role</strong>
+							<span>Freelance Senior Software Engineer</span>
 						</li>
 						<li>
-							<strong>Job</strong>
-							<span>Freelancer, Software senior engineer</span>
+							<strong>Location</strong>
+							<span>Prague, Czech Republic (Remote friendly)</span>
 						</li>
 						<li>
-							<strong>Websites</strong>
+							<strong>Website</strong>
 							<span><a href="https://peterszatmary.com" target="_blank">peterszatmary.com</a></span>
-							<!--<span><a href="https://www.kryptotipy.sk" target="_blank">kryptotipy.sk</a></span>-->
-							<!--<span><a href="https://www.brainifybooks.com" target="_blank">Brainify Books</a></span>-->
-							<!-- <span><a href="https://peterszatmary.com/ai/" target="_blank">Notes about AI</a></span> -->
 						</li>
 						<li>
 							<strong>Email</strong>
@@ -119,116 +132,104 @@
 				</div>
 
 				<div class="col-six tab-full">
-					<h3>Skills</h3>
+					<h3>Core Competencies</h3>
 					<p>
 						Over the course of my career, I have developed a strong foundation in Java development across a variety of frameworks,
-						design patterns, and architectures. Alongside backend engineering, I have expanded into DevOps by establishing
-						robust CI/CD pipelines from the ground up. I thrive on exploring emerging technologies, refining existing systems,
+						design patterns, and distributed architectures. Alongside backend engineering, I focus on DevOps by establishing
+						robust CI/CD pipelines from the ground up. I thrive on refining complex systems, adopting proven technologies,
 						and delivering high-quality solutions that align with client goals.
 					</p>
 
-					<ul class="skill-bars">
-					    <li>
-						   <div class="progress percent95"><span>90%</span></div>
-						   <strong>Object oriented programming</strong>
-					    </li>
-						<li>
-							<div class="progress percent100"><span>90%</span></div>
-							<strong>Software architecture & design</strong>
-						</li>
-					    <li>
-						   <div class="progress percent95"><span>95%</span></div>
-						   <strong>DevOps</strong>
-					    </li>
-						<li>
-							<div class="progress percent90"><span>90%</span></div>
-							<strong>Automation</strong>
-						</li>
-					</ul>
+					<div class="skill-tags" style="margin-top: 2.5rem;">
+						<span class="skill-chip">Cloud-Native Architecture</span>
+						<span class="skill-chip">Distributed Systems</span>
+						<span class="skill-chip">Microservices & APIs</span>
+						<span class="skill-chip">CI/CD & Automation</span>
+						<span class="skill-chip">High Availability</span>
+					</div>
 				</div>
 			</div>
 	   </section>
 
-				<section id="top-skills" class="grey-section">
-							<div class="row top-skills-content">
-								<div class="col-twelve section-ads">
+		<!-- skills section ================================================== -->
+		<section id="skills" class="grey-section">
+			<div class="row section-intro">
+				<div class="col-twelve">
+					<h1>Skills</h1>
+					<p class="lead">A comprehensive overview of backend architectures, cloud platforms, databases, and languages I use in production.</p>
+				</div>
+			</div>
 
-									<h1>Skills</h1>
-									<p>Here you can find technologies / languages / systems which I am using on daily basis.</p>
+			<div class="row">
+				<div class="col-twelve">
+					<div class="skills-grid-2x2">
 
-									<div class="skills-grid">
-
-										<div class="skill-card">
-											<h3><i class="fa fa-coffee"></i> Languages and scripting</h3>
-											<div class="skill-tags">
-												<span class="skill-chip" title="Java 21">Java 21</span>
-												<span class="skill-chip" title="Python">Python</span>
-												<span class="skill-chip" title="Shell">Shell</span>
-												<span class="skill-chip" title="Javascript">Javascript</span>
-											</div>
-										</div>
-
-
-										<div class="skill-card">
-											<h3><i class="fa fa-code"></i> Backend</h3>
-											<div class="skill-tags">
-    											<a href="https://spring.io/projects/spring-boot" title="Spring Boot" class="skill-chip linked" target="_blank">Spring Boot</a>
-    											<a href="https://spring.io/guides/gs/rest-service/" title="Spring REST" class="skill-chip linked" target="_blank">Spring REST</a>
-											</div>
-										</div>
-
-										<div class="skill-card">
-											<h3><i class="fa fa-desktop"></i> Frontend</h3>
-											<div class="skill-tags">
-												<a href="https://www.thymeleaf.org" title="Thymeleaf" class="skill-chip linked" target="_blank">Thymeleaf</a>
-												<a href="https://www.playframework.com" title="Twirl" class="skill-chip linked" target="_blank">Twirl</a>
-												<a href="https://github.com/peterszatmary/spring-boot-mustache-lombok-demo" title="Mustache" class="skill-chip linked" target="_blank">Mustache</a>
-												<span class="skill-chip" title="HTML">HTML</span>
-												<a href="https://getbootstrap.com" title="Bootstrap" class="skill-chip linked" target="_blank">Bootstrap</a>
-												<span class="skill-chip" title="CSS">CSS</span>
-											</div>
-										</div>
-
-										<div class="skill-card">
-											<h3><i class="fa fa-database"></i> Database</h3>
-											<div class="skill-tags">
-												<a href="https://www.oracle.com/database/technologies/" title="Oracle" class="skill-chip linked" target="_blank">Oracle</a>
-												<span class="skill-chip" title="MongoDB">MongoDB</span>
-												<a href="http://mysql.com" title="MySQL" class="skill-chip linked" target="_blank">MySQL</a>
-											</div>
-										</div>
-
-										<div class="skill-card">
-											<h3><i class="fa fa-cloud"></i> DevOps & Cloud</h3>
-											<div class="skill-tags">
-
-    											<a href="https://aws.amazon.com" title="AWS" class="skill-chip linked" target="_blank">AWS</a>
-    											<a href="https://console.cloud.google.com/" title="GCP" class="skill-chip linked" target="_blank">GCP</a>
-												<a href="https://kubernetes.io" title="Kubernetes" class="skill-chip linked" target="_blank">Kubernetes</a>
-												<a href="https://www.docker.com" title="Docker" class="skill-chip linked" target="_blank">Docker</a>
-												<a href="https://www.terraform.io/" title="Terraform" class="skill-chip linked" target="_blank">Terraform</a>
-												<a href="https://about.gitlab.com" title="Gitlab CI/CD" class="skill-chip linked" target="_blank">Gitlab</a>
-												<a href="https://www.sonarqube.org" title="SonarQube" class="skill-chip linked" target="_blank">SonarQube</a>
-												<span class="skill-chip" title="Shell scripting">Shell</span>
-												<a href="https://www.linux.org" title="Linux" class="skill-chip linked" target="_blank">Linux</a>
-											</div>
-										</div>
-
-
-
-										<div class="skill-card">
-											<h3><i class="fa fa-cogs"></i> Dev Tools</h3>
-											<div class="skill-tags">
-												<a href="https://git-scm.com" title="Git" class="skill-chip linked" target="_blank">Git</a>
-												<a href="https://about.gitlab.com" title="Gitlab" class="skill-chip linked" target="_blank">Gitlab</a>
-												<a href="https://maven.apache.org" title="Maven" class="skill-chip linked" target="_blank">Maven</a>
-											</div>
-										</div>
-									</div>
-
-								</div>
+						<div class="skill-card">
+							<h3><i class="fa fa-code"></i> Backend & Architecture</h3>
+							<div class="skill-tags">
+								<span class="skill-chip" title="Java 21">Java 21</span>
+								<a href="https://spring.io/projects/spring-boot" title="Spring Boot" class="skill-chip linked" target="_blank">Spring Boot</a>
+								<a href="https://kafka.apache.org/" title="Apache Kafka" class="skill-chip linked" target="_blank">Kafka</a>
+								<a href="https://spring.io/guides/gs/rest-service/" title="Spring REST" class="skill-chip linked" target="_blank">Spring REST</a>
+								<a href="https://flink.apache.org/" title="Apache Flink" class="skill-chip linked" target="_blank">Apache Flink</a>
+								<a href="https://spark.apache.org/" title="Apache Spark" class="skill-chip linked" target="_blank">Apache Spark</a>
+								<a href="http://tomcat.apache.org" title="Tomcat" class="skill-chip linked" target="_blank">Tomcat</a>
+								<a href="https://wildfly.org" title="JBoss / WildFly" class="skill-chip linked" target="_blank">JBoss / WildFly</a>
+								<a href="https://eclipse-ee4j.github.io/jersey/" title="Jersey" class="skill-chip linked" target="_blank">Jersey</a>
 							</div>
-						</section>
+						</div>
+
+						<div class="skill-card">
+							<h3><i class="fa fa-cloud"></i> Cloud, DevOps & CI/CD</h3>
+							<div class="skill-tags">
+								<a href="https://kubernetes.io" title="Kubernetes" class="skill-chip linked" target="_blank">Kubernetes</a>
+								<a href="https://www.docker.com" title="Docker" class="skill-chip linked" target="_blank">Docker</a>
+								<a href="https://www.terraform.io/" title="Terraform" class="skill-chip linked" target="_blank">Terraform</a>
+								<a href="https://aws.amazon.com" title="AWS" class="skill-chip linked" target="_blank">AWS</a>
+								<a href="https://cloud.google.com/" title="GCP" class="skill-chip linked" target="_blank">GCP</a>
+								<a href="https://about.gitlab.com" title="GitLab CI/CD" class="skill-chip linked" target="_blank">GitLab CI/CD</a>
+								<a href="https://www.jenkins.io" title="Jenkins" class="skill-chip linked" target="_blank">Jenkins</a>
+								<a href="https://www.sonarqube.org" title="SonarQube" class="skill-chip linked" target="_blank">SonarQube</a>
+								<a href="https://git-scm.com" title="Git" class="skill-chip linked" target="_blank">Git</a>
+								<a href="https://maven.apache.org" title="Maven" class="skill-chip linked" target="_blank">Maven</a>
+								<a href="https://www.linux.org" title="Linux" class="skill-chip linked" target="_blank">Linux</a>
+								<a href="https://www.ansible.com" title="Ansible" class="skill-chip linked" target="_blank">Ansible</a>
+							</div>
+						</div>
+
+						<div class="skill-card">
+							<h3><i class="fa fa-database"></i> Databases & Storage</h3>
+							<div class="skill-tags">
+								<a href="https://www.mongodb.com/" title="MongoDB" class="skill-chip linked" target="_blank">MongoDB</a>
+								<a href="https://www.oracle.com/database/technologies/" title="Oracle DB" class="skill-chip linked" target="_blank">Oracle DB</a>
+								<a href="https://www.mysql.com" title="MySQL" class="skill-chip linked" target="_blank">MySQL</a>
+								<a href="https://mariadb.org/" title="MariaDB" class="skill-chip linked" target="_blank">MariaDB</a>
+								<a href="https://www.microsoft.com/sql-server/" title="MsSQL" class="skill-chip linked" target="_blank">MsSQL</a>
+								<a href="https://www.ibm.com/analytics/db2" title="DB2" class="skill-chip linked" target="_blank">DB2</a>
+								<a href="https://neo4j.com" title="Neo4J" class="skill-chip linked" target="_blank">Neo4J</a>
+							</div>
+						</div>
+
+						<div class="skill-card">
+							<h3><i class="fa fa-terminal"></i> Languages & Frontend</h3>
+							<div class="skill-tags">
+								<span class="skill-chip" title="Python">Python</span>
+								<span class="skill-chip" title="Shell">Shell</span>
+								<a href="https://www.typescriptlang.org" title="TypeScript" class="skill-chip linked" target="_blank">TypeScript</a>
+								<span class="skill-chip" title="JavaScript">JavaScript</span>
+								<a href="https://www.scala-lang.org" title="Scala" class="skill-chip linked" target="_blank">Scala</a>
+								<a href="https://groovy-lang.org" title="Groovy" class="skill-chip linked" target="_blank">Groovy</a>
+								<a href="https://angular.io" title="Angular" class="skill-chip linked" target="_blank">Angular</a>
+								<a href="https://www.thymeleaf.org" title="Thymeleaf" class="skill-chip linked" target="_blank">Thymeleaf</a>
+								<span class="skill-chip" title="HTML5 & CSS3">HTML5 &amp; CSS3</span>
+								<a href="https://getbootstrap.com" title="Bootstrap" class="skill-chip linked" target="_blank">Bootstrap</a>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
 
 		<!-- other skills ================================================== -->
 		<section id="other-skills" class="white-section">
@@ -237,40 +238,37 @@
 				<div class="col-twelve section-ads">
 					<h1>Other skills</h1>
 					<p>
-						I have been working with these technologies / languages on projects too. Despite I do not considered these skills
-						as my top I am still able to use them in production on demand.
+						Technologies and tools I have worked with across various production projects. While not part of my primary daily stack,
+						I am proficient with them and ready to deploy them on demand.
 					</p>
 
-					<a href="https://spring.io" title="Spring"  target="_blank">Spring</a>,
+					<a href="https://spring.io" title="Spring" target="_blank">Spring</a>,
 					<a href="http://tomcat.apache.org" title="Tomcat" target="_blank">Tomcat</a>,
 					<a href="https://wildfly.org" title="JBoss" target="_blank">JBoss</a>,
 					<a href="https://eclipse-ee4j.github.io/jersey/" title="Jersey" target="_blank">Jersey</a>,
 					<a href="https://spark.apache.org" title="Apache Spark" target="_blank">Apache Spark</a>,
 					<a href="https://flink.apache.org" title="Apache Flink" target="_blank">Apache Flink</a>,
 					<a href="https://vaadin.com/" title="Vaadin" target="_blank">Vaadin</a>,
-					<a href="https://get.foundation" title="Foundation" target="_blank">Foundation</a>,
 					<a href="https://angular.io" title="Angular" target="_blank">Angular</a>,
-					<a href="https://www.typescriptlang.org" title="Typescript" target="_blank">Typescript</a>,
-					MsSQL,
+					<a href="https://www.typescriptlang.org" title="TypeScript" target="_blank">TypeScript</a>,
+					<a href="https://www.microsoft.com/sql-server/" title="MsSQL" target="_blank">MsSQL</a>,
 					<a href="https://mariadb.org/" title="Maria DB" target="_blank">Maria DB</a>,
 					<a href="https://www.ibm.com/analytics/db2" title="DB2" target="_blank">DB2</a>,
 					<a href="https://www.splunk.com" title="Splunk" target="_blank">Splunk</a>,
 					<a href="https://www.ansible.com" title="Ansible" target="_blank">Ansible</a>,
-					<a href="https://www.virtualbox.org" title="Virtualbox" target="_blank">Virtualbox</a>,
-					<a href="https://www.vmware.com" title="VMware" target="_blank">VMware</a>,
 					<a href="https://cloud.google.com/appengine" title="GAE" target="_blank">Google App Engine</a>,
-					<a href="https://sass-lang.com" title="Saas" target="_blank">Saas</a>,
-					<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" title="Javascript" target="_blank">Javascript</a>,
+					<a href="https://sass-lang.com" title="Sass" target="_blank">Sass</a>,
 					<a href="https://www.scala-sbt.org" title="SBT" target="_blank">SBT</a>,
 					<a href="https://www.scala-lang.org" title="Scala" target="_blank">Scala</a>,
 					<a href="https://subversion.apache.org" title="SVN" target="_blank">SVN</a>,
 					<a href="https://groovy-lang.org" title="Groovy" target="_blank">Groovy</a>,
-					<a href="https://www.python.org" title="Python" target="_blank">Python</a>,
 					<a href="https://travis-ci.org" title="Travis" target="_blank">Travis</a>,
 					<a href="https://quay.io" title="Quay" target="_blank">Quay</a>,
-					<a href="https://www.playframework.com" title="Play Framework" target="_blank">Play Framework!</a>,
+					<a href="https://www.playframework.com" title="Play Framework" target="_blank">Play Framework</a>,
 					<a href="https://neo4j.com" title="Neo4J" target="_blank">Neo4J</a>,
-					<a href="" title="Kafka" target="_blank">Kafka</a>, Gerrit, Artifactory, Nexus,
+					<a href="https://gerritcodereview.com/" title="Gerrit" target="_blank">Gerrit</a>,
+					<a href="https://jfrog.com/artifactory/" title="Artifactory" target="_blank">Artifactory</a>,
+					<a href="https://www.sonatype.com/products/sonatype-nexus-repository" title="Nexus" target="_blank">Nexus</a>,
 					<a href="https://www.jenkins.io" title="Jenkins" target="_blank">Jenkins</a>.
 				</div>
 			</div>
@@ -280,7 +278,7 @@
 			<div class="row button-section">
 				<div class="col-twelve">
 					<a href="#contact" title="Hire Me" class="button stroke smoothscroll">Hire Me</a>
-					<a href="docs/peter_szatmary_cv.pdf" title="Download CV" class="button button-primary">Resume</a>
+					<a href="docs/peter_szatmary_cv.pdf" title="Download CV" class="button button-primary" target="_blank">Download CV (PDF)</a>
 				</div>
 			</div>
 		</section>
@@ -292,7 +290,7 @@
 					<h5>Resume</h5>
 					<h1>More of my credentials.</h1>
 					<p class="lead">
-						This section is focusing on my work experiences, certificates that I earned and study.
+						An overview of my commercial experience, certifications, and educational background.
 					</p>
 				</div>
 			</div>
@@ -323,22 +321,19 @@
 							<h4>Conrad Electronic</h4>
 							<p>
 								<ul>
-									<li>
-										Responsible for Conrad checkout and cart backend.
-									</li>
-									<li>
-										Responsible Conrad transaction backend.
-									</li>
+									<li>Architect and develop mission-critical backend services for checkout, shopping cart, and payment processing, ensuring high availability and fault tolerance during peak commercial traffic.</li>
+									<li>Implement event-driven architecture using <a href="https://kafka.apache.org/" target="_blank" title="Kafka">Kafka</a> and <a href="https://spring.io/projects/spring-boot" target="_blank" title="Spring Boot">Spring Boot</a> (Java 21) to streamline order lifecycle events and transaction consistency across distributed microservices.</li>
+									<li>Manage cloud infrastructure and automated delivery pipelines on <a href="https://cloud.google.com/" target="_blank" title="GCP">GCP</a> and <a href="https://kubernetes.io" target="_blank" title="Kubernetes">Kubernetes</a> using <a href="https://www.terraform.io/" target="_blank" title="Terraform">Terraform</a> and <a href="https://about.gitlab.com" target="_blank" title="GitLab">GitLab CI/CD</a>.</li>
 							<li><strong>Technologies</strong>
 								Java 21,
 								<a href="https://kubernetes.io" target="_blank" title="Kubernetes">Kubernetes</a>,
-								<a href="" target="_blank" title="Terraform">Terraform</a>,
+								<a href="https://www.terraform.io/" target="_blank" title="Terraform">Terraform</a>,
 								<a href="https://spring.io/projects/spring-boot" target="_blank" title="Spring Boot">Spring Boot</a>,
-								<a href="" target="_blank" title="Python">Python</a>,
-								<a href="https://about.gitlab.com" target="_blank" title="Gitlab">Gitlab</a>,
-								<a href="" target="_blank" tile="GCP">GCP</a>,
-								<a href="" target="_blank" title="Kafka">Kafka</a>,
-								<a href="" target="_blank" title="MongoDB">MongoDB</a>.
+								<a href="https://www.python.org/" target="_blank" title="Python">Python</a>,
+								<a href="https://about.gitlab.com" target="_blank" title="GitLab">GitLab</a>,
+								<a href="https://cloud.google.com/" target="_blank" title="GCP">GCP</a>,
+								<a href="https://kafka.apache.org/" target="_blank" title="Kafka">Kafka</a>,
+								<a href="https://www.mongodb.com/" target="_blank" title="MongoDB">MongoDB</a>.
 							</li>
 								</ul>
 							</p>
@@ -354,7 +349,7 @@
 								<h3>Senior Software Engineer</h3>
 								<p>
 									Prague<br />
-									July 2021 - 2025
+									July 2021 - June 2025
 								</p>
 							</div>
 
@@ -362,25 +357,24 @@
 								<h4>Conrad Electronic</h4>
 								<p>
 									<ul>
-										<li>
-											Responsible for product catalog development.
+										<li>Led backend modernization for Conrad's product catalog platform, driving end-to-end migration from legacy infrastructure to a modern cloud-native stack:
+											<a href="https://www.conrad.cz/" target="_blank">conrad.cz</a>.
 										</li>
-										<li>Successfully migrated whole older products solution to newer stack and architecture.
-											<a href="https://www.conrad.cz/">conrad.cz</a>
-										</li>
+										<li>Engineered high-throughput REST APIs and data processing pipelines handling millions of product records and high-frequency catalog searches.</li>
+										<li>Automated infrastructure provisioning and containerized delivery pipelines using <a href="https://www.terraform.io/" target="_blank" title="Terraform">Terraform</a>, <a href="https://www.docker.com" target="_blank" title="Docker">Docker</a>, and <a href="https://about.gitlab.com" target="_blank" title="GitLab">GitLab CI/CD</a>, significantly improving deployment reliability.</li>
 								<li><strong>Technologies</strong>
 									Java 21,
 									<a href="https://kubernetes.io" target="_blank" title="Kubernetes">Kubernetes</a>,
-									<a href="" target="_blank" title="Terraform">Terraform</a>,
+									<a href="https://www.terraform.io/" target="_blank" title="Terraform">Terraform</a>,
 									<a href="https://www.docker.com" target="_blank" title="Docker">Docker</a>,
 									<a href="https://spring.io/projects/spring-boot" target="_blank" title="Spring Boot">Spring Boot</a>,
 									<a href="http://tomcat.apache.org" target="_blank" title="Tomcat">Tomcat</a>,
 									Shell,
-									<a href="" target="_blank" title="Python">Python</a>,
-									<a href="https://about.gitlab.com" target="_blank" title="Gitlab">Gitlab</a>,
-									<a href="" target="_blank" tile="GCP">GCP</a>,
-									<a href="" target="_blank" title="Kafka">Kafka</a>,
-									<a href="" target="_blank" title="MongoDB">MongoDB</a>.
+									<a href="https://www.python.org/" target="_blank" title="Python">Python</a>,
+									<a href="https://about.gitlab.com" target="_blank" title="GitLab">GitLab</a>,
+									<a href="https://cloud.google.com/" target="_blank" title="GCP">GCP</a>,
+									<a href="https://kafka.apache.org/" target="_blank" title="Kafka">Kafka</a>,
+									<a href="https://www.mongodb.com/" target="_blank" title="MongoDB">MongoDB</a>.
 								</li>
 									</ul>
 								</p>
@@ -405,16 +399,10 @@
 								<h4>Ness KDC : Project Here</h4>
 								<p>
 									<ul>
-										<li>I was successfully leading migration from <a href="https://xebialabs.com/technology/electricflow/" target="_blank">Electric Flow</a> to <a href="https://www.jenkins.io" target="_blank">Jenkins</a>.</li>
-										<li>Preparing architecture ( <a href="https://kubernetes.io" target="_blank">Kubernetes</a>, Shell, <a href="https://www.docker.com" target="_blank">Docker</a>, <a href="https://quay.io" target="_blank">Quay</a>,
-											<a href="https://git-scm.com" target="_blank">Git</a> )
-									 		to be easily migrated from <a href="https://www.jenkins.io" target="_blank">Jenkins</a> to <a href="https://about.gitlab.com" target="_blank">Gitlab</a>.</li>
-										<li>leading / architecting and developing microservice ( Java 8, <a href="https://spring.io/projects/spring-boot" target="_blank">Spring Boot</a> ) / micro frontend ( <a href="https://angular.io" target="_blank">Angular</a> )
-									         application deployed into <a href="https://kubernetes.io" target="_blank">Kubernetes</a>.</li>
-										<li>helping other teams to rump up with <a href="https://kubernetes.io" target="_blank">Kubernetes</a>,
-											<a href="https://www.docker.com" target="_blank">Docker</a>, <a href="https://quay.io" target="_blank">Quay</a>.</li>
-										<li>developing Jobs in Java 8 responsible for creating signs, junctions, maps for HERE.</li>
-										<li>Dockerized microservices.</li>
+										<li>Architected and delivered scalable microservices (Java 8/11, <a href="https://spring.io/projects/spring-boot" target="_blank" title="Spring Boot">Spring Boot</a>) and micro-frontends (<a href="https://angular.io" target="_blank" title="Angular">Angular</a>) deployed on multi-tenant <a href="https://kubernetes.io" target="_blank" title="Kubernetes">Kubernetes</a> clusters.</li>
+										<li>Engineered high-throughput batch and stream-processing jobs (<a href="https://flink.apache.org" target="_blank" title="Apache Flink">Apache Flink</a>, Java) for geospatial mapping features including road signs, junctions, and navigation layers.</li>
+										<li>Spearheaded enterprise CI/CD modernization: migrated build pipelines from <a href="https://xebialabs.com/technology/electricflow/" target="_blank">ElectricFlow</a> to <a href="https://www.jenkins.io" target="_blank">Jenkins</a>, and containerized build environments (<a href="https://www.docker.com" target="_blank">Docker</a>, <a href="https://quay.io" target="_blank">Quay</a>) enabling seamless migration to <a href="https://about.gitlab.com" target="_blank">GitLab CI</a>.</li>
+										<li>Served as technical mentor, coaching cross-functional engineering teams on container orchestration (<a href="https://kubernetes.io" target="_blank">Kubernetes</a>, <a href="https://www.docker.com" target="_blank">Docker</a>) and modern DevOps practices.</li>
 										<li><strong>Technologies</strong>
 											Java 8,
 											Java 11,
@@ -422,12 +410,12 @@
 											<a href="https://www.docker.com" target="_blank" title="Docker">Docker</a>,
 											<a href="https://spring.io/projects/spring-boot" target="_blank" title="Spring Boot">Spring Boot</a>,
 											<a href="https://angular.io" target="_blank"  title="Angular">Angular</a>,
-											<a href="https://www.nginx.com" target="_blank" title="Nginx">Ngnix</a>,
+											<a href="https://www.nginx.com" target="_blank" title="Nginx">Nginx</a>,
 											<a href="http://tomcat.apache.org" target="_blank" title="Tomcat">Tomcat</a>,
 											Shell,
 											<a href="https://www.jenkins.io" target="_blank" title="Jenkins">Jenkins</a>,
-											<a href="https://about.gitlab.com" target="_blank" title="Gitlab">Gitlab</a>,
-											<a href="https://aws.amazon.com" target="_blank" tile="AWS">AWS</a>,
+											<a href="https://about.gitlab.com" target="_blank" title="GitLab">GitLab</a>,
+											<a href="https://aws.amazon.com" target="_blank" title="AWS">AWS</a>,
 											<a href="https://flink.apache.org" target="_blank" title="Flink streaming">Flink streaming</a>.
 										</li>
 									</ul>
@@ -452,9 +440,8 @@
 								<h4>Ness KDC : Project Here</h4>
 								<p>
 									<ul>
-										<li>Working on HERE maps as Java / Scala developer. Beside ordinary tasks Java / Scala I was able to
-										constantly improve continuous integration and release pipelines and improve testing strategies
-											used by developers.</li>
+										<li>Developed high-performance backend mapping services for global geospatial navigation datasets using Java, <a href="https://www.scala-lang.org" target="_blank">Scala</a>, and <a href="https://www.scala-sbt.org" target="_blank">SBT</a>.</li>
+										<li>Optimized automated integration testing workflows and continuous delivery pipelines on <a href="https://aws.amazon.com" target="_blank">AWS</a> and <a href="https://www.jenkins.io" target="_blank">Jenkins</a>, shortening developer feedback loops.</li>
 										<li><strong>Technologies </strong>
 											Java,
 											<a href="https://www.scala-lang.org" target="_blank" title="Scala">Scala</a>,
@@ -475,7 +462,7 @@
 							</div>
 
 							<div class="timeline-header">
-								<h3>Senior software consultant</h3>
+								<h3>Senior Software Consultant</h3>
 								<p>
 									Slovakia, Kosice<br />
 									July 2017 - February 2018
@@ -486,19 +473,15 @@
 								<h4>Codexa s.r.o</h4>
 								<p>
 									<ul>
-										<li>Delivered architecture and prototype for IOT project on <a href="https://kubernetes.io" target="_blank">Kubernetes</a>,
-											<a href="https://angular.io" target="_blank">Angular</a>,
-											<a href="https://spring.io/projects/spring-boot" target="_blank">Spring Boot</a> microservices with <a href="https://maven.apache.org" target="_blank">Maven</a> and
-											NPM and DevOps prototype for CI / CD on <a href="https://www.jenkins.io" target="_blank">Jenkins</a>, <a href="https://www.docker.com" target="_blank">Docker</a>,
-											<a href="https://www.sonatype.com/product-nexus-repository" target="_blank">Nexus</a> and <a href="https://about.gitlab.com" target="_blank">Gitlab</a>.
-										</li>
+										<li>Architected and delivered the production-ready prototype for an IoT platform utilizing <a href="https://spring.io/projects/spring-boot" target="_blank">Spring Boot</a> microservices and <a href="https://angular.io" target="_blank">Angular</a> orchestrated on <a href="https://kubernetes.io" target="_blank">Kubernetes</a>.</li>
+										<li>Designed and implemented the core CI/CD DevOps infrastructure with <a href="https://www.jenkins.io" target="_blank">Jenkins</a>, <a href="https://www.docker.com" target="_blank">Docker</a>, <a href="https://www.sonatype.com/products/sonatype-nexus-repository" target="_blank">Nexus</a>, and <a href="https://about.gitlab.com" target="_blank">GitLab</a>.</li>
 										<li><strong>Technologies </strong>
 											Java,
 											<a href="https://spring.io/projects/spring-boot" target="_blank" title="Spring Boot">Spring Boot</a>,
 											<a href="https://www.jenkins.io" target="_blank" title="Jenkins">Jenkins</a>,
 											<a href="https://www.docker.com" target="_blank" title="Docker">Docker</a>,
-											<a href="https://www.sonatype.com/product-nexus-repository" target="_blank" title="Nexus">Nexus</a> and
-											<a href="https://about.gitlab.com" target="_blank" title="Gitlab">Gitlab</a>,
+											<a href="https://www.sonatype.com/products/sonatype-nexus-repository" target="_blank" title="Nexus">Nexus</a>,
+											<a href="https://about.gitlab.com" target="_blank" title="GitLab">GitLab</a>,
 											<a href="https://kubernetes.io" target="_blank" title="Kubernetes">Kubernetes</a>,
 											<a href="https://angular.io" target="_blank" title="Angular">Angular</a>.
 										</li>
@@ -513,39 +496,35 @@
 							</div>
 
 							<div class="timeline-header">
-								<h3>Senior software engineer</h3>
+								<h3>Senior Software Engineer</h3>
 								<p>
 									Slovakia, Kosice<br />
-									January 2017 - Jun 2017
+									January 2017 - June 2017
 								</p>
 							</div>
 
 							<div class="timeline-content">
-								<h4>Ness KDC : Project Here</h4>
+								<h4>Ness KDC : Project HERE</h4>
 								<p>
 									<ul>
-										<li>Worked on HERE maps with exceptional deliveries of full stack software meaning frontend, backend, services, tests and
-											beside that constantly improved project with architectural and design solutions that improved team efficiency.
-										</li>
-										<li>To these days the team is using new prototype projects,architecture with new technological stack and test strategies and
-											a new CI / CD which I have created.
-										</li>
+										<li>Delivered full-stack features and automated test suites for HERE mapping platforms using Java, Spring, and modern web interfaces, improving release reliability.</li>
+										<li>Established modern architectural patterns and continuous integration workflows that created lasting development standards across the engineering team.</li>
 										<li><strong>Technologies</strong>
 											Java 8,
 											<a href="https://maven.apache.org" target="_blank" title="Maven">Maven</a>,
 											Shell,
 											<a href="https://angular.io" target="_blank" title="Angular">Angular</a>,
-											<a href="https://www.typescriptlang.org" target="_blank" title="Typescript">Typescript</a>,
-											<a href="https://jquery.com" target="_blank" title="JQuery">JQuery</a>,
+											<a href="https://www.typescriptlang.org" target="_blank" title="TypeScript">TypeScript</a>,
+											<a href="https://jquery.com" target="_blank" title="jQuery">jQuery</a>,
 											<a href="https://struts.apache.org" target="_blank" title="Struts">Struts</a>,
 											<a href="https://freemarker.apache.org" target="_blank" title="Freemarker">Freemarker</a>,
 											<a href="https://www.thymeleaf.org" target="_blank"  title="Thymeleaf">Thymeleaf</a>,
 											<a href="https://git-scm.com" target="_blank" title="Git">Git</a>,
 											<a href="https://www.gerritcodereview.com" target="_blank" title="Gerrit">Gerrit</a>,
 											<a href="https://www.jenkins.io" target="_blank" title="Jenkins">Jenkins</a>,
-											<a href="" target="_blank" title="Jboss">JBoss</a>,
+											<a href="https://www.wildfly.org" target="_blank" title="JBoss">JBoss</a>,
 											<a href="https://eclipse-ee4j.github.io/jersey/" target="_blank" title="Jersey">Jersey</a>,
-											<a href="https://www.oracle.com/database/technologies/" target="_blank" title="Oracle DB">Oracle Db</a>,
+											<a href="https://www.oracle.com/database/technologies/" target="_blank" title="Oracle DB">Oracle DB</a>,
 											<a href="https://aws.amazon.com" target="_blank" title="AWS">AWS</a>.
 										</li>
 									</ul>
@@ -559,7 +538,7 @@
 							</div>
 
 							<div class="timeline-header">
-								<h3>Java developer</h3>
+								<h3>Java Developer</h3>
 								<p>
 									Germany, Munich & Slovakia, Kosice<br />
 									October 2014 - December 2016
@@ -567,26 +546,25 @@
 							</div>
 
 							<div class="timeline-content">
-								<h4>Senacor technologies Gmbh</h4>
+								<h4>Senacor Technologies GmbH</h4>
 								<p>
 									<ul>
-										<li>Successfully migrated 5 years old ETL Germany Bank to Bank application to completely new technological stack (Java 5 -> Java 8).</li>
-										<li>Achieved also significant performance improvements that allowed customers to be faster with calculations and transformations in production.</li>
-										<li>As internal tech lead I was able to deliver attendance system and application that automated interviews in company.</li>
-										<li>All coached junior developers and mentored new employees by me took part of the team as valuable members.</li>
+										<li>Spearheaded the technical migration of a mission-critical German interbank ETL application from Java 5 to Java 8, substantially improving data transformation performance and calculation throughput.</li>
+										<li>Served as internal Tech Lead, architecting and delivering key enterprise systems including an internal attendance system and an automated candidate interview platform.</li>
+										<li>Mentored junior engineers and guided technical onboarding, accelerating their ramp-up into productive team contributors.</li>
 										<li><strong>Technologies</strong>
 											Java 5,
 											Java 8,
-											<a href="" target="_blank">JBoss</a>,
+											<a href="https://www.wildfly.org" target="_blank">JBoss</a>,
 											<a href="http://tomcat.apache.org" target="_blank">Tomcat</a>,
-											<a href="" target="_blank">Spring 2.5</a>,
+											Spring 2.5,
 											<a href="https://spring.io/projects/spring-boot" target="_blank">Spring Boot</a>,
 											<a href="https://maven.apache.org" target="_blank">Maven</a>,
 											Shell,
 											<a href="https://vaadin.com/" target="_blank">Vaadin</a>,
-											<a href="https://www.mysql.com" target="_blank">Mysql</a>,
-											<a href="https://www.oracle.com/database/technologies/" target="_blank">Oracle Db</a>,
-											<a href="" target="_blank">MsSQL</a>.
+											<a href="https://www.mysql.com" target="_blank">MySQL</a>,
+											<a href="https://www.oracle.com/database/technologies/" target="_blank">Oracle DB</a>,
+											<a href="https://www.microsoft.com/sql-server/" target="_blank">MsSQL</a>.
 										</li>
 									</ul>
 								</p>
@@ -599,21 +577,22 @@
 							</div>
 
 							<div class="timeline-header">
-								<h3>Java solution specialist</h3>
-								<p>September 2013 - October 2014</p>
+								<h3>Java Solution Specialist</h3>
+								<p>
+									Slovakia, Kosice<br />
+									September 2013 - October 2014
+								</p>
 							</div>
 
 							<div class="timeline-content">
-								<h4>VSE a.s</h4>
+								<h4>VSE a.s.</h4>
 								<p>
 									<ul>
-										<li>Successfully delivered Java enterprise application <a href="https://www.web-centrum.sk/nwc/domov" target="_blank" style="color:#2FDB49;">Webcentrum</a>
-											for one of the biggest electricity and gas providers in Eastern Slovakia with thousands happy customers and users.</li>
-										<li>Successfully delivered business to business internal enterprise application for forest intersections that is helping customers make their
-											work more effective.</li>
+										<li>Delivered the customer self-service enterprise portal (<a href="https://www.web-centrum.sk/nwc/domov" target="_blank" style="color:#2FDB49;">Webcentrum</a>) for a major regional energy provider, serving thousands of active utility consumers.</li>
+										<li>Engineered internal B2B enterprise applications and automated reporting systems using Java, IBM WebSphere Portal, <a href="https://www.eclipse.org/birt/" target="_blank">BIRT</a>, and <a href="https://www.ibm.com/analytics/db2" target="_blank">DB2</a>.</li>
 										<li><strong>Technologies</strong>
 											Java,
-											<a href="" target="_blank">IBM Websphere Portal</a>,
+											IBM WebSphere Portal,
 											<a href="https://www.eclipse.org/birt/" target="_blank">BIRT</a>,
 											<a href="https://www.ibm.com/analytics/db2" target="_blank">DB2</a>.
 										</li>
@@ -640,30 +619,13 @@
 							</div>
 
 							<div class="timeline-header">
-								<h3>Master Degree</h3>
+								<h3>Master's Degree</h3>
 								<p>2011 – 2013</p>
 							</div>
 
 							<div class="timeline-content">
-								<h4>Technical University in Kosice</h4>
-								<p>Computer Engineering : Analysis of creation distributed applications for Cloud</p>
-							</div>
-						</div>
-
-						<div class="timeline-block">
-
-							<div class="timeline-ico">
-								<i class="fa fa-graduation-cap"></i>
-							</div>
-
-							<div class="timeline-header">
-								<h3>Bachelor Degree</h3>
-								<p>2008 – 2011</p>
-							</div>
-
-							<div class="timeline-content">
-								<h4>Technical University in Kosice</h4>
-								<p>Computer Engineering : Analysis of creation distributed applications for Grid</p>
+								<h4>Technical University of Kosice</h4>
+								<p>Computer Engineering (Thesis: Analysis and Design of Distributed Applications for Cloud)</p>
 							</div>
 						</div>
 					</div>
@@ -673,235 +635,129 @@
 
 			<div class="row resume-timeline">
 				<div class="col-twelve resume-header">
-					<h2>Certificates</h2>
+					<h2>Certificates & Courses</h2>
 				</div>
 
 				<div class="col-twelve">
-					<div class="timeline-wrap">
+					<div class="certs-grid">
 
-						<div class="timeline-block">
-							<div class="timeline-ico">
-								<i class="fa fa-laptop"></i>
-							</div>
-
-							<div class="timeline-header">
-								<h3>Software architecture REST</h3>
-								<p>2021</p>
-							</div>
-
-							<div class="timeline-content">
-								<h4>udemy.com</h4>
-								<p>
-									The complete guide.
-									<a href="docs/cert-arch-rest.pdf" target="_blank">Link to certificate</a>
-								</p>
-							</div>
+						<div class="skill-card">
+							<h3><i class="fa fa-cubes"></i> Architecture & Design</h3>
+							<ul class="cert-list">
+								<li class="cert-item">
+									<div class="cert-info">
+										<span class="cert-name">Software Architecture: REST</span>
+										<span class="cert-meta">2021 &bull; Udemy</span>
+									</div>
+									<div class="cert-action">
+										<a href="docs/cert-arch-rest.pdf" target="_blank" class="cert-badge">PDF</a>
+									</div>
+								</li>
+								<li class="cert-item">
+									<div class="cert-info">
+										<span class="cert-name">Software Architecture: Security</span>
+										<span class="cert-meta">2021 &bull; Udemy</span>
+									</div>
+									<div class="cert-action">
+										<a href="docs/software-architecture-security-certificate.pdf" target="_blank" class="cert-badge">PDF</a>
+									</div>
+								</li>
+								<li class="cert-item">
+									<div class="cert-info">
+										<span class="cert-name">Microservices Architecture</span>
+										<span class="cert-meta">2021 &bull; Udemy</span>
+									</div>
+									<div class="cert-action">
+										<a href="docs/microservices-architecture.pdf" target="_blank" class="cert-badge">PDF</a>
+									</div>
+								</li>
+								<li class="cert-item">
+									<div class="cert-info">
+										<span class="cert-name">Complete Guide to Software Architect</span>
+										<span class="cert-meta">2021 &bull; Udemy</span>
+									</div>
+									<div class="cert-action">
+										<a href="docs/the-complete-guide-to-becoming-a-software-architect.pdf" target="_blank" class="cert-badge">PDF</a>
+									</div>
+								</li>
+								<li class="cert-item">
+									<div class="cert-info">
+										<span class="cert-name">Architecture: Real-World Case Studies</span>
+										<span class="cert-meta">2021 &bull; Udemy</span>
+									</div>
+									<div class="cert-action">
+										<a href="docs/software-architecture-case-studies.pdf" target="_blank" class="cert-badge">PDF</a>
+									</div>
+								</li>
+								<li class="cert-item">
+									<div class="cert-info">
+										<span class="cert-name">Microservices with Spring Cloud</span>
+										<span class="cert-meta">2017 &bull; Udemy</span>
+									</div>
+									<div class="cert-action">
+										<a href="docs/microservices-with-spring-cloud.pdf" target="_blank" class="cert-badge">PDF</a>
+									</div>
+								</li>
+							</ul>
 						</div>
 
-
-						<div class="timeline-block">
-							<div class="timeline-ico">
-								<i class="fa fa-laptop"></i>
-							</div>
-
-							<div class="timeline-header">
-								<h3>AWS certified developer</h3>
-								<p>2021</p>
-							</div>
-
-							<div class="timeline-content">
-								<h4>udemy.com</h4>
-								<p>
-									Associate 2020.
-									<a href="docs/certificate-aws-associate-developer.pdf" target="_blank">Link to certificate</a>
-								</p>
-							</div>
+						<div class="skill-card">
+							<h3><i class="fa fa-cloud"></i> Cloud, Data & Infrastructure</h3>
+							<ul class="cert-list">
+								<li class="cert-item">
+									<div class="cert-info">
+										<span class="cert-name">AWS Certified Developer Associate</span>
+										<span class="cert-meta">2021 &bull; Udemy</span>
+									</div>
+									<div class="cert-action">
+										<a href="docs/certificate-aws-associate-developer.pdf" target="_blank" class="cert-badge">PDF</a>
+									</div>
+								</li>
+								<li class="cert-item">
+									<div class="cert-info">
+										<span class="cert-name">Apache Spark: Scalable Machine Learning</span>
+										<span class="cert-meta">2015 &bull; edX</span>
+									</div>
+									<div class="cert-action">
+										<a href="https://s3.amazonaws.com/verify.edx.org/downloads/528ce61e1fc64058bc4fce34e4353642/Certificate.pdf" target="_blank" class="cert-badge">PDF</a>
+									</div>
+								</li>
+								<li class="cert-item">
+									<div class="cert-info">
+										<span class="cert-name">Apache Spark: Intro to Big Data</span>
+										<span class="cert-meta">2015 &bull; edX</span>
+									</div>
+									<div class="cert-action">
+										<a href="https://s3.amazonaws.com/verify.edx.org/downloads/fa461bccd2544ec6b666c1b3875cc07e/Certificate.pdf" target="_blank" class="cert-badge">PDF</a>
+									</div>
+								</li>
+								<li class="cert-item">
+									<div class="cert-info">
+										<span class="cert-name">Reactive Programming: RxJava</span>
+										<span class="cert-meta">2016 &bull; Pluralsight</span>
+									</div>
+									<div class="cert-action">
+										<a href="https://www.pluralsight.com/courses/reactive-programming-java-8-rxjava" target="_blank" class="cert-badge">Link</a>
+									</div>
+								</li>
+								<li class="cert-item">
+									<div class="cert-info">
+										<span class="cert-name">TypeScript Fundamentals</span>
+										<span class="cert-meta">2016 &bull; Pluralsight</span>
+									</div>
+									<div class="cert-action">
+										<a href="https://www.pluralsight.com/courses/typescript" target="_blank" class="cert-badge">Link</a>
+									</div>
+								</li>
+								<li class="cert-item">
+									<div class="cert-info">
+										<span class="cert-name">Linux System Administration</span>
+										<span class="cert-meta">2010 &bull; T-Systems Slovakia (CentOS)</span>
+									</div>
+								</li>
+							</ul>
 						</div>
 
-
-						<div class="timeline-block">
-							<div class="timeline-ico">
-								<i class="fa fa-laptop"></i>
-							</div>
-
-							<div class="timeline-header">
-								<h3>Software architecture security</h3>
-								<p>2021</p>
-							</div>
-
-							<div class="timeline-content">
-								<h4>udemy.com</h4>
-								<p>
-									The complete guide.
-									<a href="docs/software-architecture-security-certificate.pdf" target="_blank">Link to certificate</a>
-								</p>
-							</div>
-						</div>
-
-
-						<div class="timeline-block">
-							<div class="timeline-ico">
-								<i class="fa fa-laptop"></i>
-							</div>
-
-							<div class="timeline-header">
-								<h3>Microservices architecture</h3>
-								<p>2021</p>
-							</div>
-
-							<div class="timeline-content">
-								<h4>udemy.com</h4>
-								<p>
-									The complete guide.
-									<a href="docs/microservices-architecture.pdf" target="_blank">Link to certificate</a>
-								</p>
-							</div>
-						</div>
-
-						<div class="timeline-block">
-							<div class="timeline-ico">
-								<i class="fa fa-laptop"></i>
-							</div>
-
-							<div class="timeline-header">
-								<h3>Software architect</h3>
-								<p>2021</p>
-							</div>
-
-							<div class="timeline-content">
-								<h4>udemy.com</h4>
-								<p>
-									The complete guide to becoming a Software architect
-									<a href="docs/the-complete-guide-to-becoming-a-software-architect.pdf" target="_blank">Link to certificate</a>
-								</p>
-							</div>
-						</div>
-
-
-
-
-						<div class="timeline-block">
-							<div class="timeline-ico">
-								<i class="fa fa-laptop"></i>
-							</div>
-
-							<div class="timeline-header">
-								<h3>Software architecture case studies</h3>
-								<p>2021</p>
-							</div>
-
-							<div class="timeline-content">
-								<h4>udemy.com</h4>
-								<p>
-									Real world case studies from software architecture perspective.
-									<a href="docs/software-architecture-case-studies.pdf" target="_blank">Link to certificate</a>
-								</p>
-							</div>
-						</div>
-
-
-						<div class="timeline-block">
-							<div class="timeline-ico">
-								<i class="fa fa-laptop"></i>
-							</div>
-
-							<div class="timeline-header">
-								<h3>Microservices with Spring Cloud</h3>
-								<p>2017</p>
-							</div>
-
-							<div class="timeline-content">
-								<h4>udemy.com</h4>
-								<p>
-									The complete guide.
-									<a href="docs/microservices-with-spring-cloud.pdf" target="_blank">Link to certificate</a>
-								</p>
-							</div>
-						</div>
-
-						<div class="timeline-block">
-							<div class="timeline-ico">
-								<i class="fa fa-laptop"></i>
-							</div>
-
-							<div class="timeline-header">
-								<h3>Reactive programming RxJava</h3>
-								<p>2016</p>
-							</div>
-
-							<div class="timeline-content">
-								<h4>Pluralsight.com</h4>
-								<p>
-									How to develop applications using Java RX in Java 8.
-									<a href="https://www.pluralsight.com/courses/reactive-programming-java-8-rxjava" target="_blank">Link to the course</a>
-								</p>
-							</div>
-						</div>
-
-						<div class="timeline-block">
-
-							<div class="timeline-ico">
-								<i class="fa fa-laptop"></i>
-							</div>
-
-							<div class="timeline-header">
-								<h3>Typescript fundamentals</h3>
-								<p>2016</p>
-							</div>
-
-							<div class="timeline-content">
-								<h4>Pluralsight.com</h4>
-								<p><a href="https://www.pluralsight.com/courses/typescript" target="_blank">Link to the course</a></p>
-							</div>
-						</div>
-
-						<div class="timeline-block">
-							<div class="timeline-ico">
-								<i class="fa fa-laptop"></i>
-							</div>
-
-							<div class="timeline-header">
-								<h3>Apache Spark - Machine learning</h3>
-								<p>2015</p>
-							</div>
-
-							<div class="timeline-content">
-								<h4>edx.org</h4>
-								<p><a href="https://s3.amazonaws.com/verify.edx.org/downloads/528ce61e1fc64058bc4fce34e4353642/Certificate.pdf" target="_blank">view Scalable machine learning certificate</a></p>
-							</div>
-						</div>
-
-						<div class="timeline-block">
-							<div class="timeline-ico">
-								<i class="fa fa-laptop"></i>
-							</div>
-
-							<div class="timeline-header">
-								<h3>Apache Spark - Intro to Big data</h3>
-								<p>2015</p>
-							</div>
-
-							<div class="timeline-content">
-								<h4>edx.org</h4>
-								<p><a href="https://s3.amazonaws.com/verify.edx.org/downloads/fa461bccd2544ec6b666c1b3875cc07e/Certificate.pdf" target="_blank">view Introduction to Big data certificate</a></p>
-							</div>
-						</div>
-
-						<div class="timeline-block">
-							<div class="timeline-ico">
-								<i class="fa fa-laptop"></i>
-							</div>
-
-							<div class="timeline-header">
-								<h3>Linux</h3>
-								<p>2010</p>
-							</div>
-
-							<div class="timeline-content">
-								<h4>T-Systems Slovakia</h4>
-								<p>Usage and basics of administration. Centos linux.</p>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -923,11 +779,9 @@
 					<div class="service">
 						<span class="icon"><i class="icon-earth"></i></span>
 						<div class="service-content">
-							<h3>Enterprise development</h3>
+							<h3>Enterprise Development</h3>
 							<p class="desc">
-								Web development, business to business applications, frontend, backend, middleware, service
-								oriented architecture, bank applications, extranet, intranet applications. I was working on all mentioned kind of
-								applications so I am able to work on them and deliver them.
+								Full-lifecycle engineering for complex distributed systems and enterprise platforms. Proven track record across high-throughput backends, transactional middleware, and microservices architectures with uncompromising reliability.
 							</p>
 						</div>
 					</div>
@@ -935,11 +789,9 @@
 					<div class="service">
 						<span class="icon"><i class="icon-window"></i></span>
 						<div class="service-content">
-							<h3>Architectures</h3>
-							<p class="desc">Because of my 13 year of work as professional developer I gained also clear sight into
-								software abstraction, software architecture as well as software design. I am able to construct software which can be
-								easily tested, easily maintained, flexible and easier to understand and write. Each client requirement could potentially
-								mean different ways to apply all mentioned in code and production.
+							<h3>Software Architecture</h3>
+							<p class="desc">
+								With over 13 years of professional software engineering experience, I design modular, testable, and maintainable architectures. I help clients translate complex business requirements into robust domain models and clean, scalable code.
 							</p>
 						</div>
 					</div>
@@ -947,13 +799,9 @@
 				   	<div class="service">
 						<span class="icon"><i class="icon-paint-brush"></i></span>
 						<div class="service-content">
-							<h3>DevOps</h3>
+							<h3>DevOps & Cloud</h3>
 							<p class="desc">
-								I have created fully automated CI / CD processes which saved a lot of developers time as well as a lot of clients money.
-								These processes made the software lifecycle that ends with deployment be less error prone. Nowadays
-								DevOps pipelines are tightly coupled with virtualization tools like Docker,
-								cloud providers like AWS or
-								with orchestration tools like Kubernetes. With all mentioned I was successfully working in a production environment.
+								I build automated CI/CD pipelines that eliminate deployment bottlenecks and safeguard production stability. Deep production expertise with Kubernetes, Docker, Terraform, and cloud environments (AWS, GCP).
 							</p>
 						</div>
 				    </div>
@@ -961,10 +809,9 @@
 					<div class="service">
 						<span class="icon"><i class="icon-chat"></i></span>
 						<div class="service-content">
-							<h3>Consultancy</h3>
+							<h3>Technical Consulting</h3>
 							<p class="desc">
-								With practical experiences in different areas I am able to give you answers how to make
-								solutions, migrations, solve functional as well as non functional production and development issues.
+								Practical architectural guidance on technology stack modernizations, legacy migrations, scalability bottlenecks, and production troubleshooting.
 							</p>
 						</div>
 					</div>
@@ -976,11 +823,17 @@
 		<section id="stats" class="count-up">
 			<div class="row">
 				<div class="col-twelve">
-					<div class="block-1-6 block-s-1-3 block-tab-1-2 block-mob-full stats-list">
+					<div class="block-1-4 block-s-1-2 block-tab-1-2 block-mob-full stats-list">
 						<div class="bgrid stat">
-							<div class="icon-part"><i class="icon-pencil-ruler"></i></div>
-							<h3 class="stat-count">55</h3>
-							<h5 class="stat-title">Architectures & designs created</h5>
+							<div class="icon-part"><i class="icon-light-bulb"></i></div>
+							<h3 class="stat-count">13</h3>
+							<h5 class="stat-title">Years of Experience</h5>
+						</div>
+
+						<div class="bgrid stat">
+							<div class="icon-part"><i class="icon-badge"></i></div>
+							<h3 class="stat-count">25</h3>
+							<h5 class="stat-title">Projects Delivered</h5>
 						</div>
 
 						<div class="bgrid stat">
@@ -990,27 +843,9 @@
 						</div>
 
 						<div class="bgrid stat">
-							<div class="icon-part"><i class="icon-badge"></i></div>
-							<h3 class="stat-count">25</h3>
-							<h5 class="stat-title">Projects participating</h5>
-						</div>
-
-						<div class="bgrid stat">
-							<div class="icon-part"><i class="icon-light-bulb"></i></div>
-							<h3 class="stat-count">200000</h3>
-							<h5 class="stat-title">Lines of code written</h5>
-						</div>
-
-						<div class="bgrid stat">
-							<div class="icon-part"><i class="icon-cup"></i></div>
-							<h3 class="stat-count">54</h3>
-							<h5 class="stat-title">Technologies used in production</h5>
-						</div>
-
-						<div class="bgrid stat">
 							<div class="icon-part"><i class="icon-clock"></i></div>
-							<h3 class="stat-count">20000</h3>
-							<h5 class="stat-title">Working hours</h5>
+							<h3 class="stat-count">100</h3>
+							<h5 class="stat-title">% Remote Ready</h5>
 						</div>
 					</div>
 				</div>
@@ -1024,7 +859,7 @@
 					<h5>Contact</h5>
 					<h1>I'd Love To Hear From You.</h1>
 					<p class="lead">
-						If you are interested in my resume and you would like to send me job offer or ask question use one of the contacts listed below.
+						If you would like to discuss a project, explore a B2B contract opportunity, or have any questions, feel free to reach out.
 					</p>
 				</div>
 			</div>

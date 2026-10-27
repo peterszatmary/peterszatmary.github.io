@@ -225,6 +225,10 @@ a.skill-chip.linked:hover {
 }
 
 /* 2-stĺpcová mriežka pre certifikáty s rovnakou výškou */
+.resume-certs-section {
+    margin-top: 8.5rem !important;
+}
+
 .certs-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

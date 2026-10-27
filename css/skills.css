@@ -278,190 +278,101 @@ a.skill-chip.linked:hover {
 }
 
 /* ===================================================================
- * Portfolio & Project Showcase (Moje projekty)
+ * Projects Section (Moje projekty)
  * =================================================================== */
-#portfolio {
+#projects {
     background: #ffffff;
     padding-top: 10.2rem;
     padding-bottom: 10.2rem;
 }
 
-.portfolio-single-card {
-    max-width: 760px;
-    margin: 0 auto !important;
+.projects-wrap {
+    max-width: 860px;
+    margin: 0 auto;
 }
 
-.portfolio-single-card .folio-item {
-    width: 100% !important;
-    max-width: 100%;
-    margin-bottom: 0;
-}
-
-.project-card {
+.project-entry {
     background: #ffffff;
-    border-radius: 12px;
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    overflow: hidden;
+    border-radius: 8px;
+    padding: 30px 32px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eaeaea;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-card:hover {
+.project-entry:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.08);
 }
 
-.project-media {
-    position: relative;
-    overflow: hidden;
-    background: #111111;
-}
-
-.project-media img {
-    width: 100%;
-    height: auto;
-    display: block;
-    vertical-align: middle;
-    transition: transform 0.5s ease-in-out;
-}
-
-.project-media:hover img {
-    transform: scale(1.03);
-}
-
-.project-badge {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    background: #31b573;
-    color: #ffffff;
-    font-size: 1.15rem;
-    font-weight: 700;
-    font-family: "poppins-bold", sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 0.12rem;
-    padding: 5px 14px;
-    border-radius: 20px;
-    z-index: 2;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-    pointer-events: none;
-}
-
-.project-body {
-    padding: 3.2rem 3.6rem 3.6rem;
-    text-align: left;
-}
-
-.project-header {
+.project-entry-header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     flex-wrap: wrap;
-    gap: 0.8rem;
-    margin-bottom: 1.2rem;
+    gap: 10px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 18px;
 }
 
-.project-title {
+.project-entry-title {
     font-family: "poppins-bold", sans-serif;
-    font-size: 2.6rem;
-    line-height: 1.3;
+    font-size: 2.2rem;
+    margin: 0 0 4px 0;
     color: #313131;
-    margin: 0;
 }
 
-.project-title a {
+.project-entry-title a {
     color: #313131;
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
-.project-title a:hover {
+.project-entry-title a:hover {
     color: #31b573;
 }
 
-.project-subtitle {
+.project-entry-sub {
     font-family: "poppins-regular", sans-serif;
     font-size: 1.35rem;
     color: #888888;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    font-weight: 600;
 }
 
-.project-desc {
-    font-family: "poppins-regular", sans-serif;
-    font-size: 1.55rem;
-    line-height: 2.7rem;
-    color: #555555;
-    margin-bottom: 2rem;
-}
-
-.project-features {
-    list-style: none;
-    margin: 0 0 2.4rem 0;
-    padding: 0;
-}
-
-.project-features li {
-    font-family: "poppins-regular", sans-serif;
-    font-size: 1.45rem;
-    line-height: 2.4rem;
-    color: #444444;
-    padding: 0.5rem 0 0.5rem 2.8rem;
-    position: relative;
-}
-
-.project-features li i {
+.project-entry-year {
+    font-family: "poppins-bold", sans-serif;
+    font-size: 1.35rem;
     color: #31b573;
-    position: absolute;
-    left: 0;
-    top: 0.8rem;
+    background: #eef8f2;
+    border: 1px solid rgba(49, 181, 115, 0.4);
+    padding: 3px 12px;
+    border-radius: 4px;
+    letter-spacing: 0.05rem;
+}
+
+.project-entry-desc {
+    font-family: "poppins-regular", sans-serif;
     font-size: 1.5rem;
+    line-height: 2.6rem;
+    color: #555555;
+    margin-bottom: 20px;
 }
 
-.project-tags {
-    margin-top: 2rem;
-    margin-bottom: 2.8rem;
+.project-entry-meta {
+    margin-bottom: 22px;
 }
 
-.project-actions {
+.project-entry-meta strong {
+    font-family: "poppins-bold", sans-serif;
+    font-size: 1.35rem;
+    color: #313131;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.project-entry-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 12px;
     flex-wrap: wrap;
     align-items: center;
-}
-
-.project-actions .button {
-    margin-bottom: 0;
-    height: 4.8rem;
-    line-height: 4.6rem;
-    padding: 0 2.6rem;
-    font-size: 1.25rem;
-    letter-spacing: 0.18rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.8rem;
-}
-
-.project-actions .item-wrap {
-    display: inline-block;
-}
-
-@media only screen and (max-width: 768px) {
-    .project-body {
-        padding: 2.4rem 2rem 2.8rem;
-    }
-    .project-title {
-        font-size: 2.2rem;
-    }
-    .project-actions {
-        flex-direction: column;
-        width: 100%;
-    }
-    .project-actions .button,
-    .project-actions .item-wrap {
-        width: 100%;
-        text-align: center;
-        justify-content: center;
-    }
 }

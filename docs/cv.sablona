@@ -1,0 +1,358 @@
+/*
+=== Peter Szatmary - Curriculum Vitae ===
+Built with Typst using the @preview/lavandula:0.1.1 template. https://typst.app/
+Font Awesome 7 icons.
+*/
+
+#import "@preview/lavandula:0.1.1": *
+
+#show: lavandula-theme
+
+#set text(lang: "en")
+#set document(
+  title: "Peter Szatmary - Senior Java & Cloud Engineer (CV)",
+  author: "Peter Szatmary",
+  date: none,
+)
+
+#cv(
+  sidebar-position: "left",
+  sidebar-width: 35%,
+  sidebar: [
+    #align(center)[
+      #box(
+        width: 3.4cm,
+        height: 3.4cm,
+        radius: 50%,
+        clip: true,
+        fill: luma(220),
+        stroke: 2.5pt + white,
+        image("profile.jpg", width: 100%, height: 100%, fit: "cover")
+      )
+    ]
+    #v(0.15cm)
+
+    #align(center)[
+      = Peter Szatmary
+      #v(-0.4em)
+      #text(weight: "semibold", size: sizes.text-b1, fill: rgb("#313131"))[Senior Java & Cloud Engineer] \
+      #v(-0.2em)
+      #text(size: sizes.text-s3, fill: luma(100))[B2B Contracts | Distributed Systems | Cloud & AI]
+    ]
+    #v(0.1cm)
+
+    #contact-list((
+      (icon: "envelope", icon-solid: true, text: link("mailto:peter.szatmary@gmail.com")[peter.szatmary\@gmail.com]),
+      (icon: "phone", icon-solid: true, text: link("tel:+421944713969")[(+421) 944 713 969]),
+      (icon: "location-dot", icon-solid: true, text: [Prague, Czech Republic]),
+      (icon: "globe", text: link("https://peterszatmary.com")[peterszatmary.com]),
+      (icon: "linkedin", text: link("https://linkedin.com/in/peter-szatmary")[in/peter-szatmary]),
+      (icon: "github", text: link("https://github.com/peterszatmary")[github.com/peterszatmary]),
+    ))
+
+    #sidebar-section(title: "About me")[
+      #set par(justify: true)
+      #show par: it => block(width: 100%, it)
+
+      Senior Software Engineer combining #highlight[13+ years of enterprise backend engineering] with high-level architectural design and modern #highlight[AI-augmented workflows].
+
+      Experienced technical lead and DevOps advocate focused on #highlight[high availability], distributed event-driven systems, and accelerated software delivery. Available for #highlight[B2B contracts].
+    ]
+
+    #sidebar-section(title: "Core Stack")[
+      #skill-group(
+        name: "Backend & Systems",
+        icon: "server",
+        icon-solid: true,
+        skills: (
+          "Java 21",
+          "Spring Boot",
+          "Apache Kafka",
+          "Spring REST",
+          "Apache Flink",
+          "Apache Spark",
+          "Tomcat",
+          "JBoss / WildFly",
+          "Jersey",
+        )
+      )
+
+      #skill-group(
+        name: "Cloud & DevOps",
+        icon: "cloud",
+        icon-solid: true,
+        skills: (
+          "Kubernetes",
+          "Docker",
+          "Terraform",
+          "GCP",
+          "AWS",
+          "GitLab CI/CD",
+          "Jenkins",
+          "Linux",
+          "SonarQube",
+          "Git",
+          "Maven",
+          "Ansible",
+        )
+      )
+    ]
+
+    #colbreak()
+
+    #sidebar-section(title: "AI & Modern Tooling")[
+      #skill-group(
+        name: "AI-Augmented Delivery",
+        icon: "wand-magic-sparkles",
+        icon-solid: true,
+        skills: (
+          "Claude Workflows",
+          "Gemini CLI & APIs",
+          "Agentic Systems",
+          "Context Design",
+          "AI-Assisted Testing",
+          "Deterministic Guardrails",
+        )
+      )
+    ]
+
+    #sidebar-section(title: "Architecture & Design")[
+      #skill-group(
+        name: "System Architecture",
+        icon: "cubes",
+        icon-solid: true,
+        skills: (
+          "Microservices",
+          "Event-Driven",
+          "Domain-Driven Design",
+          "High Availability (HA)",
+          "Zero-Downtime Deploy",
+          "Distributed Caching",
+        )
+      )
+
+      #skill-group(
+        name: "Databases & Storage",
+        icon: "database",
+        icon-solid: true,
+        skills: (
+          "MongoDB",
+          "Oracle DB",
+          "MySQL",
+          "MariaDB",
+          "MsSQL",
+          "DB2",
+          "Neo4J",
+        )
+      )
+
+      #skill-group(
+        name: "Frontend & Languages",
+        icon: "code",
+        icon-solid: true,
+        skills: (
+          "React",
+          "Next.js",
+          "TypeScript",
+          "JavaScript",
+          "Python",
+          "Shell / Bash",
+          "Angular",
+          "Scala",
+          "Groovy",
+          "Thymeleaf",
+          "HTML5 / CSS3",
+        )
+      )
+    ]
+
+    #sidebar-section(title: "Languages")[
+      #context {
+        set par(leading: 4.2pt)
+        for lang in ("English", "Slovak", "Czech", "German", "Hungarian") {
+          box(
+            fill: get-color("skill-box"),
+            stroke: 1pt + get-color("skill-box").darken(8%),
+            inset: 5.4pt,
+            radius: 4pt,
+            lang,
+          )
+          h(3.5pt)
+        }
+      }
+    ]
+  ],
+  main-content: [
+    #section(title: "Experience")[
+      #section-element(
+        title: "Senior Full-Stack & AI Systems Engineer @ Independent R&D",
+        info: [_2024 --- Present | Prague (Remote)_],
+        [
+          *AI-Augmented Systems & Full-Stack Product Delivery*
+          #set text(size: sizes.text-s2)
+          #set par(justify: false)
+          #icon-list((
+            (icon: "laptop-code", icon-solid: true, text: [Architected and delivered end-to-end full-stack web applications (#highlight[Next.js, React, TypeScript]) engineered via agentic AI workflows with focus on SSR, high performance, and modular architecture.]),
+            (icon: "cubes", icon-solid: true, text: [Integrated production third-party SaaS platforms including payments & webhooks (#highlight[Lemon Squeezy]), cloud object storage (#highlight[Cloudflare R2]), transactional email (#highlight[Resend]), and error observability (#highlight[Sentry]).]),
+            (icon: "robot", icon-solid: true, text: [Developed custom CLI commands, skills, and autonomous agent workflows with Anthropic Claude and Google Gemini, automating architectural refactoring, API scaffolding, and unit test generation.]),
+            (icon: "chart-line", icon-solid: true, text: [Benchmarked real-world productivity multipliers, context window management, and deterministic guardrails for AI-assisted enterprise software delivery.]),
+          ))
+        ],
+      )
+
+      #section-element(
+        title: "Senior Software Engineer @ Conrad Electronic",
+        info: [_07/2021 --- Present | Prague (Remote friendly)_],
+        [
+          *Core Checkout, Cart & Payment Processing Platform* _(07/2025 --- Present)_
+          #set text(size: sizes.text-s2)
+          #set par(justify: false)
+          #icon-list((
+            (icon: "cart-shopping", icon-solid: true, text: [Architect and develop mission-critical backend services for checkout, shopping cart, and payment processing, ensuring #highlight[high availability] and fault tolerance during peak commercial sales traffic.]),
+            (icon: "bolt", icon-solid: true, text: [Implement event-driven architecture using #highlight[Apache Kafka] and #highlight[Spring Boot (Java 21)] to streamline order lifecycle events and distributed transaction consistency across microservices.]),
+            (icon: "cloud", icon-solid: true, text: [Manage cloud infrastructure and automated delivery pipelines on #highlight[GCP] and #highlight[Kubernetes] using #highlight[Terraform] and #highlight[GitLab CI/CD].]),
+          ))
+
+          #v(0.35em)
+          *Product Catalog Modernization & High-Throughput APIs* _(07/2021 --- 06/2025)_
+          #set text(size: sizes.text-s2)
+          #set par(justify: false)
+          #icon-list((
+            (icon: "layer-group", icon-solid: true, text: [Led backend modernization for Conrad's product catalog platform (#highlight[conrad.cz]), driving end-to-end cloud-native migration from legacy infrastructure to a modern scalable stack.]),
+            (icon: "rocket", icon-solid: true, text: [Engineered high-throughput REST APIs and data processing pipelines handling millions of product records and high-frequency catalog search queries.]),
+            (icon: "wrench", icon-solid: true, text: [Automated infrastructure provisioning and containerized delivery pipelines using #highlight[Terraform], #highlight[Docker], and #highlight[GitLab CI/CD], boosting deployment reliability.]),
+          ))
+        ],
+      )
+
+      #section-element(
+        title: "Senior Software Engineer @ Ness KDC (HERE Technologies)",
+        info: [_03/2018 --- 11/2020 | Remote (USA & Berlin)_],
+        [
+          *Geospatial Navigation & Streaming Platform* _(USA Remote, 12/2018 --- 11/2020)_
+          #set text(size: sizes.text-s2)
+          #set par(justify: false)
+          #icon-list((
+            (icon: "network-wired", icon-solid: true, text: [Architected and delivered scalable microservices (#highlight[Java 8/11, Spring Boot]) and micro-frontends (#highlight[Angular]) deployed on multi-tenant #highlight[Kubernetes] clusters.]),
+            (icon: "diagram-project", icon-solid: true, text: [Engineered high-throughput batch and stream-processing jobs (#highlight[Apache Flink, Java]) for geospatial mapping features including road signs, junctions, and navigation layers.]),
+            (icon: "gears", icon-solid: true, text: [Spearheaded enterprise CI/CD modernization: migrated build pipelines from ElectricFlow to #highlight[Jenkins], containerizing build environments (#highlight[Docker, Quay]) towards #highlight[GitLab CI].]),
+            (icon: "graduation-cap", icon-solid: true, text: [Served as technical mentor, coaching cross-functional engineering teams on container orchestration (Kubernetes, Docker) and modern DevOps practices.]),
+          ))
+
+          #v(0.35em)
+          *Backend Mapping Services & Pipeline Optimization* _(Berlin Remote, 03/2018 --- 12/2018)_
+          #set text(size: sizes.text-s2)
+          #set par(justify: false)
+          #icon-list((
+            (icon: "database", icon-solid: true, text: [Developed high-performance backend mapping services for global geospatial navigation datasets using #highlight[Java, Scala], and #highlight[SBT].]),
+            (icon: "check-double", icon-solid: true, text: [Optimized automated integration testing workflows and continuous delivery pipelines on #highlight[AWS] and Jenkins, shortening developer feedback loops.]),
+          ))
+        ],
+      )
+    ]
+
+    #colbreak()
+
+    #section(title: "Experience (Continued)")[
+      #section-element(
+        title: "Senior Software Consultant @ Codexa s.r.o",
+        info: [_07/2017 --- 02/2018 | Kosice, Slovakia_],
+        [
+          #set text(size: sizes.text-s2)
+          #set par(justify: false)
+          #icon-list((
+            (icon: "cube", icon-solid: true, text: [Architected and delivered the production-ready prototype for an enterprise IoT platform utilizing #highlight[Spring Boot] microservices and #highlight[Angular] orchestrated on #highlight[Kubernetes].]),
+            (icon: "screwdriver-wrench", icon-solid: true, text: [Designed and implemented core CI/CD DevOps infrastructure with Jenkins, Docker, Sonatype Nexus, and GitLab.]),
+          ))
+        ],
+      )
+
+      #section-element(
+        title: "Senior Software Engineer @ Ness KDC (HERE Technologies)",
+        info: [_01/2017 --- 06/2017 | Kosice, Slovakia_],
+        [
+          #set text(size: sizes.text-s2)
+          #set par(justify: false)
+          #icon-list((
+            (icon: "map-location-dot", icon-solid: true, text: [Delivered full-stack mapping platform features and automated test suites with Java 8, Spring, Oracle DB, and modern web UI.]),
+            (icon: "code-branch", icon-solid: true, text: [Established modern architectural patterns and continuous integration workflows that created lasting standards across the team.]),
+          ))
+        ],
+      )
+
+      #section-element(
+        title: "Java Developer & Tech Lead @ Senacor Technologies GmbH",
+        info: [_10/2014 --- 12/2016 | Munich & Kosice_],
+        [
+          #set text(size: sizes.text-s2)
+          #set par(justify: false)
+          #icon-list((
+            (icon: "money-bill-transfer", icon-solid: true, text: [Spearheaded technical migration of a mission-critical German interbank ETL application from Java 5 to #highlight[Java 8], substantially improving calculation throughput.]),
+            (icon: "users-gear", icon-solid: true, text: [Served as internal Tech Lead: architected attendance and automated interview platforms; mentored junior engineers.]),
+          ))
+        ],
+      )
+
+      #section-element(
+        title: "Java Solution Specialist @ VSE a.s. (RWE Group)",
+        info: [_09/2013 --- 10/2014 | Kosice, Slovakia_],
+        [
+          #set text(size: sizes.text-s2)
+          #set par(justify: false)
+          #icon-list((
+            (icon: "building-columns", icon-solid: true, text: [Delivered customer self-service enterprise portal (#highlight[Webcentrum]) for a major regional utility provider, serving thousands of active consumers.]),
+            (icon: "chart-line", icon-solid: true, text: [Engineered internal B2B enterprise applications and automated reporting systems using Java, IBM WebSphere Portal, BIRT, and DB2.]),
+          ))
+        ],
+      )
+    ]
+
+    #section(title: "Selected Projects & Open Source")[
+      #section-element(title: "Independent Web Applications")[
+        #set text(size: sizes.text-s2)
+        #set par(justify: false)
+        #icon-list((
+          (icon: "globe", icon-solid: true, text: [#highlight[pokemongo.sk (2026)]: Jamstack interactive Pokédex and Pokémon card store directory across SK & CZ. Engineered with Astro, Tailwind CSS, TypeScript (#link("https://pokemongo.sk")[pokemongo.sk]).]),
+          (icon: "gamepad", icon-solid: true, text: [#highlight[kryptotipy.sk (2026)]: Interactive crypto market educational game with real-time CoinGecko API data & CI/CD (#link("https://kryptotipy.sk")[kryptotipy.sk]).]),
+          (icon: "briefcase", icon-solid: true, text: [#highlight[peterszatmary.com]: Professional personal engineering portfolio showcase (#link("https://peterszatmary.com")[peterszatmary.com]).]),
+        ))
+      ]
+
+      #section-element(title: "Open Source Contributions")[
+        #set text(size: sizes.text-s2)
+        #set par(justify: false)
+        #icon-list((
+          (icon: "github", text: [Contributor to `learnxinyminutes-docs` (community programming language reference).]),
+          (icon: "github", text: [Contributor to `neo-project/neo-devpack-java` and `neo-project/examples-java` on GitHub.]),
+        ))
+      ]
+    ]
+
+    #section(title: "Education")[
+      #section-element(
+        title: "Technical University of Kosice",
+        info: [_2011 --- 2013 | Kosice, Slovakia_],
+        [
+          #set text(size: sizes.text-s2)
+          _Master's Degree (Ing.) in Computer Engineering_ \
+          Thesis: #highlight[Analysis and Design of Distributed Applications for Cloud] \
+          Focus: Distributed Systems, Cloud Architecture, Advanced Databases, Operating Systems
+        ],
+      )
+    ]
+
+    #section(title: "Certifications & Continuous Learning")[
+      #set text(size: sizes.text-s2)
+      #set par(justify: false)
+      #icon-list((
+        (icon: "certificate", icon-solid: true, text: [#highlight[AWS Certified Developer Associate] --- Udemy (2021)]),
+        (icon: "shield-halved", icon-solid: true, text: [#highlight[Software Architecture: Security & REST] --- Udemy (2021)]),
+        (icon: "cubes", icon-solid: true, text: [#highlight[Microservices Architecture & Spring Cloud] --- Udemy (2021, 2017)]),
+        (icon: "diagram-project", icon-solid: true, text: [#highlight[Complete Guide to Becoming a Software Architect] --- Udemy (2021)]),
+        (icon: "fire", icon-solid: true, text: [#highlight[Apache Spark: Scalable Machine Learning & Big Data] --- edX (2015)]),
+        (icon: "bolt", icon-solid: true, text: [#highlight[Reactive Programming (RxJava) & TypeScript Fundamentals] --- Pluralsight (2016)]),
+        (icon: "server", icon-solid: true, text: [#highlight[Linux System Administration] --- T-Systems Slovakia / CentOS (2010)]),
+      ))
+    ]
+  ],
+)
